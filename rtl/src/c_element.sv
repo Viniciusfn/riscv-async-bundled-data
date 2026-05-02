@@ -56,7 +56,7 @@ module c_element #(
          .Y(i2)
       );
 
-      OR2X8 OR2_1_DONT_TOUCH(
+      OR2X8 DRV_DONT_TOUCH(
          .A(i1),
          .B(i2),
          .Y(s)
@@ -64,7 +64,7 @@ module c_element #(
    
    end else begin
    
-      AND2X8 AND2_1_DONT_TOUCH(
+      AND2X8 DRV_DONT_TOUCH(
          .A(i1),
          .B(rst_n),
          .Y(s)
