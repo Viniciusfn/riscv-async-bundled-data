@@ -1,0 +1,20 @@
+------------------------ Benchmark Output ------------------------
+Starting benchmark on Async RISC-V...
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 1951247096
+Total time (secs): 4
+Iterations/Sec   : 1500
+ERROR! Must execute for at least 10 secs for a valid result!
+Iterations       : 6000
+Compiler version : GCC15.1.0
+Compiler flags   : 
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xa14c
+Errors detected
+
+------------------------------------------------------------------
