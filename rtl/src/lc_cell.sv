@@ -23,7 +23,7 @@ module lc_cell #(
    /* C element instance */
    c_element_asym #(
       .INIT(C_ELEM_INIT)
-   ) uu_c_element_1 (
+   ) uu_c_element_mid (
       .a(i_ack),
       .b(~i_req),
       .rst_n(rst_n),
@@ -32,7 +32,7 @@ module lc_cell #(
 
    c_element_asym #(
       .INIT(C_ELEM_INIT)
-   ) uu_c_element_2 (
+   ) uu_c_element (
       .a(c1_out_w),
       .b(i_req),
       .rst_n(rst_n),

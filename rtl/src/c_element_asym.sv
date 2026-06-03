@@ -24,19 +24,19 @@ module c_element_asym #(
    `else
    wire n1,n2,n3,i1;
   
-   ORD2X6 OR2_1(
+   OR2X6 OR2_1_DONT_TOUCH(
       .A(a),
       .B(b),
       .Y(n1)
    );
 
-   ORD2X6 OR2_2(
+   OR2X6 OR2_2_DONT_TOUCH(
       .A(a),
       .B(s),
       .Y(n2)
    );
 
-   AND2X6 AND2_1(
+   AND2X6 AND2_1_DONT_TOUCH(
       .A(n1),
       .B(n2),
       .Y(n3)
@@ -44,12 +44,12 @@ module c_element_asym #(
 
    generate if (INIT == 1) begin
       
-      INVX8 INV_1(
+      INVX8 INV_1_DONT_TOUCH(
          .A(rst_n),
          .Y(i1)
       );
 
-      OR2X8 OR2_3(
+      OR2X8 DRV_DONT_TOUCH(
          .A(n3),
          .B(i1),
          .Y(s)
@@ -57,7 +57,7 @@ module c_element_asym #(
    
    end else begin
 
-      AND2X8 AND2_2(
+      AND2X8 DRV_DONT_TOUCH(
          .A(n3),
          .B(rst_n),
          .Y(s)

@@ -35,6 +35,8 @@ set_db phys_assume_met_fill 1
 set_db init_hdl_search_path $RTL_PATH
 if { ${SYNC_VERSION} == 1 } {
     read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define SYNC_RISCV
+} elseif { ${PROTO_LC} == 1 } {
+    read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define PROTO_LC
 } else {
     read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE
 }
