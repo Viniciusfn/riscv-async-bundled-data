@@ -11,6 +11,7 @@ module ariscv_ctrlpath #(
    parameter integer DELAY_MW_REG  = 1,
    parameter integer DELAY_REG_DE  = 1,
    parameter integer DELAY_LOOP    = 1,
+   parameter integer DELAY_LOOP_2  = 1,
    // Initialization
    parameter bit INIT_PC       = 1,
    parameter bit INIT_FD       = 0,
@@ -56,6 +57,14 @@ module ariscv_ctrlpath #(
 
    logic dummy_aclk[1:0];
 
+   `ifdef TOKENS_2
+   logic req_DE_FL, ack_DE_FL;
+   logic req_FL_L2, ack_FL_L2;
+   logic req_L2_JL, ack_L2_JL;
+   logic req_JL_DE, ack_JL_DE;
+   logic req_FL_L2_delayed;
+   `endif
+
    /* WCHB cells */
    `ifdef PROTO_LC
    lc_cell #(
@@ -95,10 +104,17 @@ module ariscv_ctrlpath #(
       .INIT    (INIT_DE)
    ) uu_cell_DE (
       .rst_n   (rst_async_n),
+      `ifdef TOKENS_2
+      .i_req   (req_JL_DE),
+      .i_ack   (ack_DE_FL),
+      .o_req   (req_DE_FL),
+      .o_ack   (ack_JL_DE),
+      `else
       .i_req   (req_J2_DE),
       .i_ack   (ack_DE_F2),
       .o_req   (req_DE_F2),
       .o_ack   (ack_J2_DE),
+      `endif
       .o_aclk  (o_aclk[2])
    );
 
@@ -163,6 +179,18 @@ module ariscv_ctrlpath #(
    );
 
    `ifdef PROTO_LC
+      `ifdef TOKENS_2
+         lc_cell #(
+            .INIT    (INIT_LOOP2)
+         ) uu_cell_LOOP2 (
+            .rst_n   (rst_async_n),
+            .i_req   (req_FL_L2_delayed),
+            .i_ack   (ack_L2_JL),
+            .o_req   (req_L2_JL),
+            .o_ack   (ack_FL_L2),
+            .o_aclk  (dummy_aclk[1])
+         );
+      `endif
    assign req_L2_J1 = req_L1_L2_delayed;
    assign ack_L1_L2 = ack_L2_J1;
    `else
@@ -179,6 +207,32 @@ module ariscv_ctrlpath #(
    `endif
 
    /* Forks and Joins */
+   `ifdef TOKENS_2
+   ctrl_fork #(
+      .INIT    (0)
+   ) uu_fork_DE_LOOP (
+      .rst_n   (rst_async_n),
+      .i_req   (req_DE_FL),
+      .o_ack   (ack_DE_FL),
+      .o_req_0 (req_DE_F2),
+      .i_ack_0 (ack_DE_F2),
+      .o_req_1 (req_FL_L2),
+      .i_ack_1 (ack_FL_L2)
+   );
+
+   ctrl_join #(
+      .INIT    (0)
+   ) uu_join_LOOP_DE (
+      .rst_n   (rst_async_n),
+      .i_req_0 (req_J2_DE),
+      .o_ack_0 (ack_J2_DE),
+      .i_req_1 (req_L2_JL),
+      .o_ack_1 (ack_L2_JL),
+      .o_req   (req_JL_DE),
+      .i_ack   (ack_JL_DE)
+   );
+   `endif
+
    ctrl_fork #(
       .INIT    (0)
    ) uu_fork_F1 (
@@ -329,5 +383,14 @@ module ariscv_ctrlpath #(
       .i_data  (req_REG_J2),
       .o_data  (req_REG_J2_delayed)
    );
+
+   `ifdef TOKENS_2
+   delay #(
+      .DELAY   (DELAY_LOOP_2)
+   ) uu_dly_LOOP_2 (
+      .i_data  (req_FL_L2),
+      .o_data  (req_FL_L2_delayed)
+   );
+   `endif
 
 endmodule

@@ -13,6 +13,7 @@ package ariscv_params_pkg;
       int DELAY_MW_REG;
       int DELAY_REG_DE;
       int DELAY_LOOP;
+      int DELAY_LOOP_2;
          // Initialization
       bit INIT_PC;
       bit INIT_FD;
@@ -44,6 +45,7 @@ package ariscv_params_pkg;
       DELAY_MW_REG   : 15,
       DELAY_REG_DE   : 14,
       DELAY_LOOP     : 1,
+      DELAY_LOOP_2   : 0,
       `else
       // slow 1.0v
       DELAY_PC_FD    : 12,
@@ -53,7 +55,8 @@ package ariscv_params_pkg;
       DELAY_EM_MW    : 12,
       DELAY_MW_REG   : 16,
       DELAY_REG_DE   : 15,
-      DELAY_LOOP     : 1,
+      DELAY_LOOP     : 10,
+      DELAY_LOOP_2   : 10,
       // // fast 1.0v
       // DELAY_PC_FD    : 12,
       // DELAY_FD_DE    : 8,
@@ -62,7 +65,8 @@ package ariscv_params_pkg;
       // DELAY_EM_MW    : 12,
       // DELAY_MW_REG   : 4,
       // DELAY_REG_DE   : 4,
-      // DELAY_LOOP     : 2,
+      // DELAY_LOOP     : 10,
+      // DELAY_LOOP_2   : 10,
       `endif
 
          // Initialization

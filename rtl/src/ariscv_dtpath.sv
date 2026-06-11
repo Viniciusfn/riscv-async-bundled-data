@@ -119,9 +119,13 @@ module ariscv_dtpath #(
    assign stall_pc   = 1'b0;
    assign stall_fd   = 1'b0;
    assign flush_fd   = 1'b0;
-   assign flush_de   = 1'b0;
    assign forwardA_E = 2'b00;
    assign forwardB_E = 2'b00;
+      `ifdef TOKENS_2
+      assign flush_de   = lw_stall | pc_src;
+      `else
+      assign flush_de   = 1'b0;
+      `endif
    `endif
 
    /* OUTPUT ASSIGNMENTS */
