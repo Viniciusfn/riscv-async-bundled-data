@@ -29,14 +29,18 @@ module ariscv_dtpath #(
    // FETCH-DECODE
    logic [NBW_PC-1:0]         pc_fd;
    logic [NBW_PC-1:0]         pc_plus4_fd;
-   logic [NBW_INST-1:0]       inst;
+   logic [NBW_INST-1:0]       inst_fd;
    // DECODE-EXEC
+   logic [NBW_PC-1:0]         pc_fd_de_mux;
+   logic [NBW_PC-1:0]         pc_plus4_fd_de_mux;
+   logic [NBW_INST-1:0]       inst_fd_de_mux;
+   logic [NBW_INST-1:0]       inst_de;
    logic [NBW_REGISTER-1:0]   rd1;
    logic [NBW_REGISTER-1:0]   rd2;
    logic [NBW_REGISTER-1:0]   immExt;
    logic [NBW_ADDR-1:0]       wr_addr_reg_de;
-   logic [NBW_PC-1:0]         pc_de;
-   logic [NBW_PC-1:0]         pc_plus4_de;
+   logic [NBW_PC-1:0]         pc_de, pc_de_preserved;
+   logic [NBW_PC-1:0]         pc_plus4_de, pc_plus4_de_preserved;
    logic                      regWrite_de;
    logic [1:0]                resultSrc_de;
    logic                      memWrite_de;
@@ -82,8 +86,8 @@ module ariscv_dtpath #(
    logic [NBW_ADDR-1:0]       rs1_de;
    logic [NBW_ADDR-1:0]       rs2_de;
 
-   assign rs1_fd = inst[19:15];
-   assign rs2_fd = inst[24:20];
+   assign rs1_fd = inst_fd[19:15];
+   assign rs2_fd = inst_fd[24:20];
 
    `ifdef SYNC_RISCV
    assign lw_stall   = ((resultSrc_de[0]) & ((rs1_fd == wr_addr_reg_de) | (rs2_fd == wr_addr_reg_de))) ?1'b1 :1'b0;
@@ -115,16 +119,41 @@ module ariscv_dtpath #(
    end
    
    `else
-   assign lw_stall   = 1'b0;
-   assign stall_pc   = 1'b0;
    assign stall_fd   = 1'b0;
    assign flush_fd   = 1'b0;
    assign forwardA_E = 2'b00;
    assign forwardB_E = 2'b00;
       `ifdef TOKENS_2
+      assign lw_stall   = ((regWrite_de) & (wr_addr_reg_de != 0) // & (resultSrc_de[0])
+                           & ((rs1_fd == wr_addr_reg_de) 
+                           | ((rs2_fd == wr_addr_reg_de) & (~aluSrc)))) 
+                           ?1'b1 :1'b0;;
+
       assign flush_de   = lw_stall | pc_src;
+      
+      always_ff @( posedge i_aclk[2] or negedge rst_async_n ) begin : async_hazard_control
+         if (!rst_async_n) begin
+            stall_pc <= 1'b0;
+            inst_de <= '0;
+            pc_de_preserved <= '0;
+            pc_plus4_de_preserved <= '0;
+         end
+         else begin
+            stall_pc <= lw_stall;
+            inst_de <= inst_fd;
+            pc_de_preserved <= pc_fd;
+            pc_plus4_de_preserved <= pc_plus4_fd;
+         end
+      end
+
+      assign pc_fd_de_mux = (stall_pc) ? inst_de : inst_fd;
+      assign pc_plus4_fd_de_mux = (stall_pc) ? pc_de_preserved : pc_fd;
+      assign inst_fd_de_mux = (stall_pc) ? pc_plus4_de_preserved : pc_plus4_fd;
+
       `else
+      assign lw_stall   = 1'b0;
       assign flush_de   = 1'b0;
+      assign stall_pc   = 1'b0;
       `endif
    `endif
 
@@ -145,7 +174,7 @@ module ariscv_dtpath #(
       // TO DECODE
       .o_pc_fd          (pc_fd),
       .o_pc_plus4       (pc_plus4_fd),
-      .o_inst           (inst),
+      .o_inst           (inst_fd),
       // INSTR MEM
       .i_inst           (i_inst),
       .o_pc_mem         (o_pc),
@@ -165,9 +194,9 @@ module ariscv_dtpath #(
       .reg_aclk         (i_aclk[5]),
       .rst_async_n      (rst_async_n),
       // FROM FETCH
-      .i_inst           (inst),
-      .i_pc             (pc_fd),
-      .i_pc_plus4       (pc_plus4_fd),
+      .i_inst           (pc_fd_de_mux),
+      .i_pc             (pc_plus4_fd_de_mux),
+      .i_pc_plus4       (inst_fd_de_mux),
       // FROM WRITEBACK
       .i_wr_dt_reg      (wr_dt_reg),
       .i_wr_addr_reg    (wr_addr_reg_wd),

@@ -379,19 +379,34 @@ module tb_ariscv_soc_top;
       @(negedge reg_clk);
       assert(tb_reg_dt[4] == 32'hFFFFFB0B);
       @(negedge reg_clk);
+      `ifdef TOKENS_2
+      @(negedge reg_clk);
+      `endif
       assert(tb_reg_dt[1] == 32'hFFFFFB0D);
       @(negedge reg_clk);
+      `ifdef TOKENS_2
+      @(negedge reg_clk);
+      `endif
       assert(tb_reg_dt[2] == 32'hFFFFF618);
 
       @(negedge reg_clk);
       @(negedge reg_clk);
+      `ifdef TOKENS_2
+      @(negedge reg_clk);
+      `endif
       assert(tb_reg_dt[4] == tb_reg_dt[2]);
       @(negedge reg_clk);
       `ifdef SYNC_RISCV
       @(negedge reg_clk);
       `endif
+      `ifdef TOKENS_2
+      @(negedge reg_clk);
+      `endif
       assert(tb_reg_dt[1] == tb_reg_dt[2] + 2);
       @(negedge reg_clk);
+      `ifdef TOKENS_2
+      @(negedge reg_clk);
+      `endif
       assert(tb_reg_dt[2] == tb_reg_dt[1] + tb_reg_dt[4]);
 
       // Control Hazards
