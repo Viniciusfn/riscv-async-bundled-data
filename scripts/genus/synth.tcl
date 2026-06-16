@@ -36,7 +36,11 @@ set_db init_hdl_search_path $RTL_PATH
 if { ${SYNC_VERSION} == 1 } {
     read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define SYNC_RISCV
 } elseif { ${PROTO_LC} == 1 } {
-    read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define PROTO_LC
+    if { ${LC_TOKENS} == 2 } {
+        read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define PROTO_LC -define TOKENS_2
+    } else {
+        read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define PROTO_LC -define TOKENS_1
+    }
 } else {
     read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE
 }
