@@ -419,6 +419,12 @@ module tb_ariscv_soc_top;
          assert(tb_reg_dt[1] != '1);
       end
       `endif
+      `ifdef TOKENS_2
+      repeat (3) begin
+         @(negedge reg_clk);
+         assert(tb_reg_dt[1] != '1);
+      end
+      `endif
       @(negedge reg_clk);
       assert(tb_reg_dt[1] == 1);
 
@@ -428,6 +434,12 @@ module tb_ariscv_soc_top;
       repeat (4) @(negedge reg_clk);
       `ifdef SYNC_RISCV
       repeat (6) begin
+         @(negedge reg_clk);
+         assert(tb_reg_dt[1] != '1);
+      end
+      `endif
+      `ifdef TOKENS_2
+      repeat (3) begin
          @(negedge reg_clk);
          assert(tb_reg_dt[1] != '1);
       end
