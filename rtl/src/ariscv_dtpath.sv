@@ -118,6 +118,10 @@ module ariscv_dtpath #(
       end
    end
    
+   assign pc_fd_de_mux = inst_fd;
+   assign pc_plus4_fd_de_mux = pc_fd;
+   assign inst_fd_de_mux = pc_plus4_fd;
+
    `else
    assign stall_fd   = 1'b0;
    assign flush_fd   = 1'b0;
@@ -154,6 +158,9 @@ module ariscv_dtpath #(
       assign lw_stall   = 1'b0;
       assign flush_de   = 1'b0;
       assign stall_pc   = 1'b0;
+      assign pc_fd_de_mux = inst_fd;
+      assign pc_plus4_fd_de_mux = pc_fd;
+      assign inst_fd_de_mux = pc_plus4_fd;
       `endif
    `endif
 
