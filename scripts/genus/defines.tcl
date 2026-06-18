@@ -3,6 +3,7 @@ set DESIGN ariscv
 
 set SYNC_VERSION 0
 set PROTO_LC 1
+set LC_TOKENS 1
 
 # ----------------------------------------
 #    Lefs
