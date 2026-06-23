@@ -35,7 +35,8 @@ module ariscv_dec #(
    // HAZARD HANDLING
    input  logic                     i_flush_de,
    output logic [NBW_ADDR-1:0]      o_rs1_de,
-   output logic [NBW_ADDR-1:0]      o_rs2_de
+   output logic [NBW_ADDR-1:0]      o_rs2_de,
+   output logic                     o_aluSrc_fd
 );
 
    /* Local signals and parameters */
@@ -64,6 +65,8 @@ module ariscv_dec #(
 
    assign rs1_w = i_inst[19:15];
    assign rs2_w = i_inst[24:20];
+
+   assign o_aluSrc_fd = aluSrc_w;
 
    /* FF */
    always_ff @(posedge de_aclk or negedge rst_async_n) begin

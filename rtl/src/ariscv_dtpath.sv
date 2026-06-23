@@ -1,3 +1,5 @@
+`define PROTO_LC
+`define TOKENS_2
 module ariscv_dtpath #(
    /* PARAMETERS */
    parameter NBW_ACLK      = 6,
@@ -85,6 +87,8 @@ module ariscv_dtpath #(
    logic [NBW_ADDR-1:0]       rs2_fd;
    logic [NBW_ADDR-1:0]       rs1_de;
    logic [NBW_ADDR-1:0]       rs2_de;
+   logic                      aluSrc_fd;
+   logic                      memWrite_fd;
 
    assign rs1_fd = inst_fd[19:15];
    assign rs2_fd = inst_fd[24:20];
@@ -128,16 +132,17 @@ module ariscv_dtpath #(
    assign forwardA_E = 2'b00;
    assign forwardB_E = 2'b00;
       `ifdef TOKENS_2
+      assign memWrite_fd = (inst_fd[6:0] == 7'b0100011) ? 1'b1 : 1'b0; // if op is SW
       assign lw_stall   = ((regWrite_de) & (wr_addr_reg_de != 0) // & (resultSrc_de[0])
-                           & ((rs1_fd == wr_addr_reg_de) 
-                           | ((rs2_fd == wr_addr_reg_de) & (~aluSrc)))) 
+                           & ((rs1_fd == wr_addr_reg_de)
+                           | ((rs2_fd == wr_addr_reg_de) & (~aluSrc_fd | memWrite_fd))))
                            ?1'b1 :1'b0;;
 
       assign flush_de   = lw_stall | pc_src;
       
       always_ff @( posedge i_aclk[2] or negedge rst_async_n ) begin : async_hazard_control
          if (!rst_async_n) begin
-            stall_pc <= 1'b0;
+            stall_pc <= '0;
             inst_de <= '0;
             pc_de_preserved <= '0;
             pc_plus4_de_preserved <= '0;
@@ -226,7 +231,8 @@ module ariscv_dtpath #(
       // HAZARD HANDLING
       .i_flush_de      (flush_de),
       .o_rs1_de        (rs1_de),
-      .o_rs2_de        (rs2_de)
+      .o_rs2_de        (rs2_de),
+      .o_aluSrc_fd     (aluSrc_fd)
    );
 
    ariscv_exec #(
