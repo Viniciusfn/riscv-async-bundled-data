@@ -3,7 +3,9 @@ set DESIGN ariscv
 
 set SYNC_VERSION 0
 set PROTO_LC 1
-set LC_TOKENS 1
+set LC_TOKENS 2
+
+set FAST_CORNER 0
 
 # ----------------------------------------
 #    Lefs
@@ -24,7 +26,11 @@ set LIB_PATH {/Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/ }
                #gsclib045/timing/slow_vdd1v0_extvdd1v2.lib \
                #gsclib045/timing/slow_vdd1v0_extvdd1v0.lib }
 
-set LIB_LIST { gsclib045/timing/slow_vdd1v0_basicCells.lib }
+if { ${FAST_CORNER} == 1 } {
+    set LIB_LIST { gsclib045/timing/fast_vdd1v0_basicCells.lib }
+} else {
+    set LIB_LIST { gsclib045/timing/slow_vdd1v0_basicCells.lib }
+}
 
 #fast_vdd1v0_basicCells_hvt.lib  fast_vdd1v2_basicCells_hvt.lib  slow_vdd1v0_basicCells_hvt.lib  slow_vdd1v2_basicCells_hvt.lib
 #fast_vdd1v0_basicCells_lvt.lib  fast_vdd1v2_basicCells_lvt.lib  slow_vdd1v0_basicCells_lvt.lib  slow_vdd1v2_basicCells_lvt.lib

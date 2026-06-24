@@ -44,29 +44,32 @@ package ariscv_params_pkg;
       DELAY_EM_MW    : 11,
       DELAY_MW_REG   : 15,
       DELAY_REG_DE   : 14,
-      DELAY_LOOP     : 10,
+      DELAY_LOOP     : 1,
       DELAY_LOOP_2   : 0,
       `else
-      // slow 1.0v
-      DELAY_PC_FD    : 12,
-      DELAY_FD_DE    : 25,
-      DELAY_DE_EM    : 32,
-      DELAY_DE_PC    : 45,
-      DELAY_EM_MW    : 12,
-      DELAY_MW_REG   : 16,
-      DELAY_REG_DE   : 15,
-      DELAY_LOOP     : 11,
-      DELAY_LOOP_2   : 10,
-      // // fast 1.0v
-      // DELAY_PC_FD    : 12,
-      // DELAY_FD_DE    : 8,
-      // DELAY_DE_EM    : 20,
-      // DELAY_DE_PC    : 24,
-      // DELAY_EM_MW    : 12,
-      // DELAY_MW_REG   : 4,
-      // DELAY_REG_DE   : 4,
-      // DELAY_LOOP     : 11,
-      // DELAY_LOOP_2   : 10,
+         `ifdef FAST_CORNER
+         // fast 1.0v
+         DELAY_PC_FD    : 12,
+         DELAY_FD_DE    : 8,
+         DELAY_DE_EM    : 20,
+         DELAY_DE_PC    : 24,
+         DELAY_EM_MW    : 12,
+         DELAY_MW_REG   : 4,
+         DELAY_REG_DE   : 4,
+         DELAY_LOOP     : 11,
+         DELAY_LOOP_2   : 10,
+         `else
+         // slow 1.0v
+         DELAY_PC_FD    : 12,
+         DELAY_FD_DE    : 25,
+         DELAY_DE_EM    : 32,
+         DELAY_DE_PC    : 45,
+         DELAY_EM_MW    : 12,
+         DELAY_MW_REG   : 16,
+         DELAY_REG_DE   : 15,
+         DELAY_LOOP     : 11,
+         DELAY_LOOP_2   : 10,
+         `endif
       `endif
 
          // Initialization

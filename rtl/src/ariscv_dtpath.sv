@@ -1,5 +1,3 @@
-`define PROTO_LC
-`define TOKENS_2
 module ariscv_dtpath #(
    /* PARAMETERS */
    parameter NBW_ACLK      = 6,

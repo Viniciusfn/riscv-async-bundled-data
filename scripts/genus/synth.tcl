@@ -33,17 +33,27 @@ set_db phys_assume_met_fill 1
 # RTL
 # ----------------------------------------
 set_db init_hdl_search_path $RTL_PATH
-if { ${SYNC_VERSION} == 1 } {
-    read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define SYNC_RISCV
-} elseif { ${PROTO_LC} == 1 } {
-    if { ${LC_TOKENS} == 2 } {
-        read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define PROTO_LC -define TOKENS_2
-    } else {
-        read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE -define PROTO_LC -define TOKENS_1
-    }
-} else {
-    read_hdl -language sv $RTL_LIST_FILE -define SYNTHESIS -define PW_AWARE
+
+set HDL_FLAGS [list -define SYNTHESIS -define PW_AWARE]
+
+if {$FAST_CORNER == 1} {
+    lappend HDL_FLAGS -define FAST_CORNER
 }
+
+if {$SYNC_VERSION == 1} {
+    lappend HDL_FLAGS -define SYNC_RISCV
+}
+
+if {$PROTO_LC == 1} {
+    lappend HDL_FLAGS -define PROTO_LC
+    if {$LC_TOKENS == 2} {
+        lappend HDL_FLAGS -define TOKENS_2
+    } else {
+        lappend HDL_FLAGS -define TOKENS_1
+    }
+}
+
+read_hdl -language sv {*}$HDL_FLAGS $RTL_LIST_FILE
 
 set_db hdl_enable_real_support true
 set_db dp_area_mode true
