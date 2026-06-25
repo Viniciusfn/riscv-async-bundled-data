@@ -1,5 +1,3 @@
-`define PROTO_LC
-`define TOKENS_2
 module ariscv_dtpath #(
    /* PARAMETERS */
    parameter NBW_ACLK      = 6,
@@ -75,7 +73,7 @@ module ariscv_dtpath #(
    logic [1:0]                resultSrc_mw;
    /**/
 
-   /* HAZARD HANDLING */
+   /* HAZARD HANDLING - begin */
    logic                      lw_stall;
    logic                      stall_pc;
    logic                      stall_fd;
@@ -136,7 +134,7 @@ module ariscv_dtpath #(
       assign lw_stall   = ((regWrite_de) & (wr_addr_reg_de != 0) // & (resultSrc_de[0])
                            & ((rs1_fd == wr_addr_reg_de)
                            | ((rs2_fd == wr_addr_reg_de) & (~aluSrc_fd | memWrite_fd))))
-                           ?1'b1 :1'b0;;
+                           ?1'b1 :1'b0;
 
       assign flush_de   = lw_stall | pc_src;
       
@@ -168,6 +166,7 @@ module ariscv_dtpath #(
       assign inst_fd_de_mux = pc_plus4_fd;
       `endif
    `endif
+   /* HAZARD HANDLING - end */
 
    /* OUTPUT ASSIGNMENTS */
    assign o_mem_clk = i_aclk[4];
