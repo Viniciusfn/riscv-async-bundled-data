@@ -19,6 +19,8 @@ if { ${FAST_CORNER} == 1 } {
     set DELAY_EM_MW [expr ${MEM_IO_DELAY} + 0.200]
     set DELAY_MW_REG 0.400
     set DELAY_REG_DE 0.400
+    # set DELAY_PC_PC
+    # set DELAY_DE_DE
 } else {
     # Slow 1.0v
     set DELAY_PC_FD [expr ${MEM_IO_DELAY} + 0.200]
@@ -28,6 +30,8 @@ if { ${FAST_CORNER} == 1 } {
     set DELAY_EM_MW [expr ${MEM_IO_DELAY} + 0.200]
     set DELAY_MW_REG 1.600
     set DELAY_REG_DE 1.500
+    # set DELAY_PC_PC
+    # set DELAY_DE_DE
 }
 
 set PERIOD_PC_0  [expr 2*${DELAY_PC_FD}]
@@ -55,7 +59,7 @@ if { ${SYNC_VERSION} == 1 } {
 
     # Dummy clocks
     create_clock -name "DUMMY_LOOP1"   -period ${DUMMY_PERIOD} [get_pins uu_ctrlpath/uu_cell_LOOP1/uu_c_element/*DRV_DONT_TOUCH/Y]
-    if { ${PROTO_LC} == 0 } {
+    if { ${PROTO_LC} == 0 || ${LC_TOKENS} == 2} {
         create_clock -name "DUMMY_LOOP2"   -period ${DUMMY_PERIOD} [get_pins uu_ctrlpath/uu_cell_LOOP2/uu_c_element/*DRV_DONT_TOUCH/Y]
     }
 
@@ -63,6 +67,10 @@ if { ${SYNC_VERSION} == 1 } {
     create_generated_clock -name "EPC_LOOP1_req" -source [get_pins uu_ctrlpath/uu_cell_LOOP1/uu_c_element/*DRV_DONT_TOUCH/A]   -add -master_clock [get_clocks ACLK_PC_0] -combinational [get_pins uu_ctrlpath/uu_cell_LOOP1/uu_c_element/*DRV_DONT_TOUCH/Y]
     if { ${PROTO_LC} == 1 } {
         create_generated_clock -name "EPC_LOOP1_ack" -source [get_pins uu_ctrlpath/uu_cell_LOOP1/uu_c_element/*DRV_DONT_TOUCH/A]   -add -master_clock [get_clocks ACLK_PC_0] -combinational [get_pins uu_ctrlpath/uu_cell_LOOP1/uu_c_element/*DRV_DONT_TOUCH/Y]
+        if { ${LC_TOKENS} == 2 } {
+            create_generated_clock -name "EPC_LOOP2_ack" -source [get_pins uu_ctrlpath/uu_cell_LOOP2/uu_c_element/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks ACLK_DE_2] -combination [get_pins uu_ctrlpath/uu_cell_LOOP2/uu_c_element/*DRV_DONT_TOUCH/Y]
+            create_generated_clock -name "EPC_LOOP2_req" -source [get_pins uu_ctrlpath/uu_cell_LOOP2/uu_c_element/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks ACLK_DE_2] -combination [get_pins uu_ctrlpath/uu_cell_LOOP2/uu_c_element/*DRV_DONT_TOUCH/Y]
+        }
     } else {
         create_generated_clock -name "EPC_LOOP2_ack" -source [get_pins uu_ctrlpath/uu_cell_LOOP2/uu_c_element/*DRV_DONT_TOUCH/A]   -add -master_clock [get_clocks ACLK_PC_0] -combinational [get_pins uu_ctrlpath/uu_cell_LOOP2/uu_c_element/*DRV_DONT_TOUCH/Y]
         create_generated_clock -name "EPC_LOOP1_ack" -source [get_pins uu_ctrlpath/uu_cell_LOOP1/uu_c_element/*DRV_DONT_TOUCH/A]   -add -master_clock [get_clocks EPC_LOOP2_ack] -combinational [get_pins uu_ctrlpath/uu_cell_LOOP1/uu_c_element/*DRV_DONT_TOUCH/Y]
@@ -80,6 +88,14 @@ if { ${SYNC_VERSION} == 1 } {
     }
     create_generated_clock -name "EPC_J2_req0"   -source [get_pins uu_ctrlpath/uu_join_J2/uu_c_element_join/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks ACLK_FD_1] -combinational [get_pins uu_ctrlpath/uu_join_J2/uu_c_element_join/*DRV_DONT_TOUCH/Y]
     create_generated_clock -name "EPC_J2_req1"   -source [get_pins uu_ctrlpath/uu_join_J2/uu_c_element_join/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks ACLK_REG_5] -combinational [get_pins uu_ctrlpath/uu_join_J2/uu_c_element_join/*DRV_DONT_TOUCH/Y]
+    if { ${PROTO_LC} == 1 && ${LC_TOKENS} == 2 } {
+        create_generated_clock -name "EPC_FL_ack0_a" -source [get_pins uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks EPC_F2_ack0] -combinational [get_pins uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork/*DRV_DONT_TOUCH/Y]
+        create_generated_clock -name "EPC_FL_ack0_b" -source [get_pins uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks EPC_F2_ack1] -combinational [get_pins uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork/*DRV_DONT_TOUCH/Y]
+        create_generated_clock -name "EPC_FL_ack1" -source [get_pins uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks EPC_LOOP2_ack] -combinational [get_pins uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork/*DRV_DONT_TOUCH/Y]
+        create_generated_clock -name "EPC_JL_req0_a" -source [get_pins uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks EPC_J2_req0] -combinational [get_pins uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join/*DRV_DONT_TOUCH/Y]
+        create_generated_clock -name "EPC_JL_req0_b" -source [get_pins uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks EPC_J2_req1] -combinational [get_pins uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join/*DRV_DONT_TOUCH/Y]
+        create_generated_clock -name "EPC_JL_req1" -source [get_pins uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join/*DRV_DONT_TOUCH/A] -add -master_clock [get_clocks EPC_LOOP2_req] -combinational [get_pins uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join/*DRV_DONT_TOUCH/Y]
+    }
 
     # Launch/Capture Clocks (EPC)
     if { ${PROTO_LC} == 1 } {
@@ -87,10 +103,17 @@ if { ${SYNC_VERSION} == 1 } {
         create_generated_clock -name "LAUNCH_FD_PC"  -source [get_pins uu_ctrlpath/uu_cell_PC/uu_c_element_mid/OR2_1*/A]    -add -master_clock [get_clocks {EPC_F1_ack0}] -combinational [get_pins uu_ctrlpath/uu_cell_PC/uu_c_element/*DRV_DONT_TOUCH/Y]
         create_generated_clock -name "CAPTURE_PC_FD" -source [get_pins uu_ctrlpath/uu_cell_FD/uu_c_element/OR2_1*/B]        -add -master_clock [get_clocks {ACLK_PC_0}] -combinational [get_pins uu_ctrlpath/uu_cell_FD/uu_c_element/*DRV_DONT_TOUCH/Y]
         create_generated_clock -name "LAUNCH_DE_FD"  -source [get_pins uu_ctrlpath/uu_cell_FD/uu_c_element_mid/OR2_1*/A]    -add -master_clock [get_clocks {ACLK_DE_2}] -combinational [get_pins uu_ctrlpath/uu_cell_FD/uu_c_element/*DRV_DONT_TOUCH/Y]
-        create_generated_clock -name "CAPTURE_FD_DE" -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/OR2_1*/B]        -add -master_clock [get_clocks {EPC_J2_req0}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
-        create_generated_clock -name "CAPTURE_REG_DE" -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/OR2_1*/B]       -add -master_clock [get_clocks {EPC_J2_req1}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
-        create_generated_clock -name "LAUNCH_PC_DE"  -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element_mid/OR2_1*/A]    -add -master_clock [get_clocks {EPC_F2_ack0}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
-        create_generated_clock -name "LAUNCH_EM_DE"  -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element_mid/OR2_1*/A]    -add -master_clock [get_clocks {EPC_F2_ack1}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+        if { ${LC_TOKENS} == 2 } {
+            create_generated_clock -name "CAPTURE_FD_DE" -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/OR2_1*/B]     -add -master_clock [get_clocks {EPC_JL_req0_a}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+            create_generated_clock -name "CAPTURE_REG_DE" -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/OR2_1*/B]    -add -master_clock [get_clocks {EPC_JL_req0_b}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+            create_generated_clock -name "LAUNCH_PC_DE"  -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element_mid/OR2_1*/A] -add -master_clock [get_clocks {EPC_FL_ack0_a}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+            create_generated_clock -name "LAUNCH_EM_DE"  -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element_mid/OR2_1*/A] -add -master_clock [get_clocks {EPC_FL_ack0_b}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+        } else {
+            create_generated_clock -name "CAPTURE_FD_DE" -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/OR2_1*/B]     -add -master_clock [get_clocks {EPC_J2_req0}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+            create_generated_clock -name "CAPTURE_REG_DE" -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/OR2_1*/B]    -add -master_clock [get_clocks {EPC_J2_req1}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+            create_generated_clock -name "LAUNCH_PC_DE"  -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element_mid/OR2_1*/A] -add -master_clock [get_clocks {EPC_F2_ack0}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+            create_generated_clock -name "LAUNCH_EM_DE"  -source [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element_mid/OR2_1*/A] -add -master_clock [get_clocks {EPC_F2_ack1}] -combinational [get_pins uu_ctrlpath/uu_cell_DE/uu_c_element/*DRV_DONT_TOUCH/Y]
+        }
         create_generated_clock -name "CAPTURE_DE_EM" -source [get_pins uu_ctrlpath/uu_cell_EM/uu_c_element/OR2_1*/B]        -add -master_clock [get_clocks {ACLK_DE_2}] -combinational [get_pins uu_ctrlpath/uu_cell_EM/uu_c_element/*DRV_DONT_TOUCH/Y]
         create_generated_clock -name "LAUNCH_MW_EM"  -source [get_pins uu_ctrlpath/uu_cell_EM/uu_c_element_mid/OR2_1*/A]    -add -master_clock [get_clocks {ACLK_MW_4}] -combinational [get_pins uu_ctrlpath/uu_cell_EM/uu_c_element/*DRV_DONT_TOUCH/Y]
         create_generated_clock -name "CAPTURE_EM_MW" -source [get_pins uu_ctrlpath/uu_cell_MW/uu_c_element/OR2_1*/B]        -add -master_clock [get_clocks {ACLK_EM_3}] -combinational [get_pins uu_ctrlpath/uu_cell_MW/uu_c_element/*DRV_DONT_TOUCH/Y]
@@ -119,12 +142,12 @@ if { ${SYNC_VERSION} == 1 } {
 if { ${SYNC_VERSION} == 0 } {
    # Local Clock Sets
    set_clock_groups -asynchronous \
-        -group {ACLK_PC_0 CAPTURE_PC* LAUNCH_PC* EPC_LOOP* EPC_F1_ack1 EPC_F2_ack0 EPC_J1_req1} \
-        -group {ACLK_FD_1 CAPTURE_FD* LAUNCH_FD* EPC_F1_ack0 EPC_J2_req0} \
-        -group {ACLK_DE_2 CAPTURE_DE* LAUNCH_DE* EPC_J1_req0} \
-        -group {ACLK_EM_3 CAPTURE_EM* LAUNCH_EM* EPC_F2_ack1} \
+        -group {ACLK_PC_0 CAPTURE_PC* LAUNCH_PC*} \
+        -group {ACLK_FD_1 CAPTURE_FD* LAUNCH_FD*} \
+        -group {ACLK_DE_2 CAPTURE_DE* LAUNCH_DE*} \
+        -group {ACLK_EM_3 CAPTURE_EM* LAUNCH_EM*} \
         -group {ACLK_MW_4 CAPTURE_MW* LAUNCH_MW*} \
-        -group {ACLK_REG_5 CAPTURE_REG* LAUNCH_REG* EPC_J2_req1}
+        -group {ACLK_REG_5 CAPTURE_REG* LAUNCH_REG*}
 }
 
 if { ${SYNC_VERSION} == 0 } {
