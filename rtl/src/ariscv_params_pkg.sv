@@ -36,7 +36,7 @@ package ariscv_params_pkg;
       NBW_ACLK       : 6,
       // CTRLPATH
          // Delays: DELAY_Source_Receiver
-      `ifdef SYNTHESIS
+      `ifdef SYNTHESIS // in general, 1 delay for each 100ns (-1 due to c_element internal delay)
       DELAY_PC_FD    : 11,
       DELAY_FD_DE    : 24,
       DELAY_DE_EM    : 31,
@@ -44,8 +44,13 @@ package ariscv_params_pkg;
       DELAY_EM_MW    : 11,
       DELAY_MW_REG   : 15,
       DELAY_REG_DE   : 14,
-      DELAY_LOOP     : 1,
-      DELAY_LOOP_2   : 0,
+         `ifdef PROTO_LC
+         DELAY_LOOP     : 13,
+         DELAY_LOOP_2   : 41,
+         `else
+         DELAY_LOOP     : 6,  // half delay because constraint in loop = cycle time
+         DELAY_LOOP_2   : 20, // half delay because constraint in loop = cycle time
+         `endif
       `else
          `ifdef FAST_CORNER
          // fast 1.0v
@@ -56,8 +61,8 @@ package ariscv_params_pkg;
          DELAY_EM_MW    : 12,
          DELAY_MW_REG   : 4,
          DELAY_REG_DE   : 4,
-         DELAY_LOOP     : 11,
-         DELAY_LOOP_2   : 10,
+         DELAY_LOOP     : 10, // To be checked
+         DELAY_LOOP_2   : 42, // To be checked
          `else
          // slow 1.0v
          DELAY_PC_FD    : 12,
@@ -67,8 +72,8 @@ package ariscv_params_pkg;
          DELAY_EM_MW    : 12,
          DELAY_MW_REG   : 16,
          DELAY_REG_DE   : 15,
-         DELAY_LOOP     : 11,
-         DELAY_LOOP_2   : 10,
+         DELAY_LOOP     : 14,
+         DELAY_LOOP_2   : 42,
          `endif
       `endif
 

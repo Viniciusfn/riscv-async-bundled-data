@@ -44,7 +44,7 @@ module ariscv_ctrlpath #(
    logic req_J1_PC, ack_J1_PC;
    logic req_J2_DE, ack_J2_DE;
 
-   logic req_L1_L2_delayed;
+   // logic req_L1_L2_delayed;
    logic req_L2_J1_delayed;
    logic req_FD_J2_delayed;
    logic req_EM_MW_delayed;
@@ -191,14 +191,14 @@ module ariscv_ctrlpath #(
             .o_aclk  (dummy_aclk[1])
          );
       `endif
-   assign req_L2_J1 = req_L1_L2_delayed;
+   assign req_L2_J1 = req_L1_L2;
    assign ack_L1_L2 = ack_L2_J1;
    `else
    wchb_cell #(
       .INIT    (INIT_LOOP2)
    ) uu_cell_LOOP2 (
       .rst_n   (rst_async_n),
-      .i_req   (req_L1_L2_delayed),
+      .i_req   (req_L1_L2),
       .i_ack   (ack_L2_J1),
       .o_req   (req_L2_J1),
       .o_ack   (ack_L1_L2),
@@ -300,12 +300,12 @@ module ariscv_ctrlpath #(
       .o_data  (req_F1_FD_delayed)
    );
 
-   delay #(
-      .DELAY   (DELAY_LOOP)
-   ) uu_dly_L1_L2 (
-      .i_data  (req_L1_L2),
-      .o_data  (req_L1_L2_delayed)
-   );
+   // delay #(
+   //    .DELAY   (DELAY_LOOP)
+   // ) uu_dly_L1_L2 (
+   //    .i_data  (req_L1_L2),
+   //    .o_data  (req_L1_L2_delayed)
+   // );
 
    `ifdef PROTO_LC
    assign req_L2_J1_delayed = req_L2_J1;
@@ -384,13 +384,15 @@ module ariscv_ctrlpath #(
       .o_data  (req_REG_J2_delayed)
    );
 
-   `ifdef TOKENS_2
-   delay #(
-      .DELAY   (DELAY_LOOP_2)
-   ) uu_dly_LOOP_2 (
-      .i_data  (req_FL_L2),
-      .o_data  (req_FL_L2_delayed)
-   );
+   `ifdef PROTO_LC
+      `ifdef TOKENS_2
+      delay #(
+         .DELAY   (DELAY_LOOP_2/2)
+      ) uu_dly_LOOP_2 (
+         .i_data  (req_FL_L2),
+         .o_data  (req_FL_L2_delayed)
+      );
+      `endif
    `endif
 
 endmodule

@@ -8,38 +8,38 @@ set PERIOD_SYNC_CLK 4.400
 # Fast 1.0V
 # set PERIOD_SYNC_CLK 2.400
 
-set MEM_IO_DELAY 1.000 ;# Memories reference operating at 1GHz average
+set MEM_IO_PERIOD 1.000 ;# Memories reference operating at 1GHz average
 
 if { ${FAST_CORNER} == 1 } {
     # Fast 1.0v
-    set DELAY_PC_FD [expr ${MEM_IO_DELAY} + 0.200]
+    set DELAY_PC_FD [expr ${MEM_IO_PERIOD} + 0.200]
     set DELAY_FD_DE 0.800
     set DELAY_DE_EM 2.000 
     set DELAY_DE_PC 2.400
-    set DELAY_EM_MW [expr ${MEM_IO_DELAY} + 0.200]
+    set DELAY_EM_MW [expr ${MEM_IO_PERIOD}]
     set DELAY_MW_REG 0.400
     set DELAY_REG_DE 0.400
-    # set DELAY_PC_PC
-    # set DELAY_DE_DE
+    set DELAY_PC_PC 0.000; # To be checked
+    set DELAY_DE_DE 0.000; # To be checked
 } else {
     # Slow 1.0v
-    set DELAY_PC_FD [expr ${MEM_IO_DELAY} + 0.200]
+    set DELAY_PC_FD [expr ${MEM_IO_PERIOD} + 0.200]
     set DELAY_FD_DE 2.500
     set DELAY_DE_EM 3.200
     set DELAY_DE_PC 4.400
-    set DELAY_EM_MW [expr ${MEM_IO_DELAY} + 0.200]
+    set DELAY_EM_MW [expr ${MEM_IO_PERIOD}]
     set DELAY_MW_REG 1.600
     set DELAY_REG_DE 1.500
-    # set DELAY_PC_PC
-    # set DELAY_DE_DE
+    set PERIOD_PC_PC 1.400
+    set PERIOD_DE_DE 4.200
 }
 
-set PERIOD_PC_0  [expr 2*${DELAY_PC_FD}]
-set PERIOD_FD_1  [expr 2*${DELAY_FD_DE}]
-set PERIOD_DE_2  [expr 2*${DELAY_DE_PC}]
-set PERIOD_EM_3  [expr 2*${DELAY_EM_MW}]
-set PERIOD_MW_4  [expr 2*${DELAY_MW_REG}]
-set PERIOD_REG_5 [expr 2*${DELAY_REG_DE}]
+set PERIOD_PC_0  [expr ${PERIOD_PC_PC}]
+set PERIOD_FD_1  0; #[expr 2*${DELAY_FD_DE}]
+set PERIOD_DE_2  [expr ${PERIOD_DE_DE}]
+set PERIOD_EM_3  0; #[expr 2*${DELAY_EM_MW}]
+set PERIOD_MW_4  0; #[expr 2*${DELAY_MW_REG}]
+set PERIOD_REG_5 [expr ${DELAY_REG_DE}]
 set DUMMY_PERIOD 0
 
 set_global timing_enable_genclk_edge_based_source_latency false
