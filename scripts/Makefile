@@ -55,5 +55,8 @@ lec:
 	lec -dofile ../scripts/lec/rtl_to_fv_map.tcl -xl -nogui
 	lec -dofile ../scripts/lec/fv_map_final.tcl -xl -nogui
 
+innovus:
+	innovus -files ../scripts/innovus/setup.tcl
+
 clean:
 	rm -rf obj_dir *.vcd *.log *.cmd $(WAVE_FILE)

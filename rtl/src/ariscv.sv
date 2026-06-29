@@ -20,6 +20,11 @@ module ariscv #(
    output logic                                    o_memWrite,
    output logic [2:0]                              o_writeWidth,
    input  logic [ARISCV_PARAMS.NBW_REGISTER-1:0]   i_readData
+
+   `ifdef PW_AWARE
+   ,inout VDD
+   ,inout VSS
+   `endif
 );
    /* Local signals and parameters */
    `ifndef SYNC_RISCV
