@@ -6,6 +6,8 @@ floorPlan \
     -site CoreSite \
     -su 1.0 0.60 20 20 20 20
 
+assignIoPins -autoBusGroup
+
 globalNetConnect VDD -type pgpin -pin VDD -all
 globalNetConnect VSS -type pgpin -pin VSS -all
 
@@ -52,8 +54,9 @@ checkDesign -all -noHtml -outFile "$REPORT_PATH/checkDesign.rpt"
 # Results
 #########################################################
 
-#saveDesign ${RESULTS_PATH}/${DESIGN}.enc        ;# DEF
-#defOut ${RESULTS_PATH}/${DESIGN}.def            ;# Export DEF
+saveDesign ${DATABASE_PATH}/${DESIGN}.enc       ;# DEF
 saveNetlist ${RESULTS_PATH}/${DESIGN}_routed.v  ;# Routed Verilog
+#write_sdf ${TIMING_PATH}/${DESIGN}_routed.sdf   ;# SDF
+#defOut ${RESULTS_PATH}/${DESIGN}.def            ;# Export DEF
 #rcOut -spef ${RESULTS_PATH}/top.spef            ;# SPEF
 #streamOut ${RESULTS_PATH}/top.gds               ;# GDS

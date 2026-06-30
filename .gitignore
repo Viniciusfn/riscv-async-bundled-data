@@ -46,3 +46,5 @@ workspace/*
 
 db/*
 *.dump
+
+*.metrics

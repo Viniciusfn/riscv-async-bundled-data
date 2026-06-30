@@ -56,7 +56,7 @@ lec:
 	lec -dofile ../scripts/lec/fv_map_final.tcl -xl -nogui
 
 innovus:
-	innovus -files ../scripts/innovus/setup.tcl
+	innovus -files ../scripts/innovus/setup.tcl -no_gui
 
 clean:
 	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob 

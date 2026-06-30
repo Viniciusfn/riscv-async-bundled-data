@@ -31,5 +31,7 @@ set_analysis_view \
     -setup setup \
     -hold setup
 
+setDesignMode -process 45
+
 # To enable OCV
 #setAnalysisMode -analysisType onChipVariation

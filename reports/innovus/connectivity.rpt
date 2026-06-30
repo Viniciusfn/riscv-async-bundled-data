@@ -1,0 +1,26 @@
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Tue Jun 30 18:27:14 2026
+
+Design Name: ariscv
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (247.4000, 247.1900)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+Use 4 pthreads
+Net VDD: no routing.
+Net VSS: no routing.
+
+Begin Summary 
+    2 Problem(s) (IMPVFC-98): Net has no global routing and no special routing.
+    2 total info(s) created.
+End Summary
+
+End Time: Tue Jun 30 18:27:14 2026
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 2 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.5  MEM: 22.000M)
+

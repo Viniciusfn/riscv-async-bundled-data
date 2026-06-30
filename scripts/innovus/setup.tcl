@@ -9,6 +9,7 @@ set NETLIST_PATH  ../structural
 set SCRIPTS_PATH  ../scripts
 set REPORT_PATH  ../reports/innovus
 set RESULTS_PATH  ../structural/innovus
+set TIMING_PATH ../timing
 
 # LEFS and LIBS ---------------------------------
 set LEF_LIST {/Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/gsclib045/lef/gsclib045_tech.lef \

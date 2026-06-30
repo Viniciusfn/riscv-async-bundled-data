@@ -1,0 +1,124 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 22.14-s061_1 (64bit) 10/18/2023 11:21 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-30 18:27:13 (2026-Jun-30 21:27:13 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: ariscv
+*
+*	Liberty Libraries used: 
+*	        setup: /Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/gsclib045/timing/slow_vdd1v0_basicCells.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        0.9 
+*
+*       Power View : setup
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile ../reports/innovus/power.rpt -hierarchy all
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        1.83169926 	   70.2927%
+Total Switching Power:       0.77348386 	   29.6830%
+Total Leakage Power:         0.00063388 	    0.0243%
+Total Power:                 2.60581700 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         1.281     0.07316   0.0002505       1.354       51.98 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                     0.3302      0.4617   0.0003541      0.7922        30.4 
+Clock (Combinational)             0.2204      0.2386   2.927e-05      0.4591       17.62 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                              1.832      0.7735   0.0006339       2.606         100 
+-----------------------------------------------------------------------------------------
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.2204      0.2386   2.927e-05      0.4591       17.62 
+-----------------------------------------------------------------------------------------
+Total (excluding duplicates)      0.2204      0.2386   2.927e-05      0.4591       17.62 
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.004400 usec 
+Clock Toggle Rate:   454.5454 Mhz 
+Clock Static Probability:  0.5000
+
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       0.9      1.832      0.7735   0.0006339       2.606         100 
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        1.83169926 	   70.2927%
+Total Switching Power:       0.77348386 	   29.6830%
+Total Leakage Power:         0.00063388 	    0.0243%
+Total Power:                 2.60581700 
+-----------------------------------------------------------------------------------------
+
+
+Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+uu_dtpath                          1.831      0.7681   0.0006326       2.599       99.75  
+uu_dtpath/uu_dec                   1.182       0.314   0.0003362       1.497       57.44  
+uu_dtpath/uu_exec                 0.3351      0.2776   0.0002068      0.6129       23.52  
+uu_dtpath/uu_fetch                0.1113     0.02505     3.4e-05      0.1363       5.232  
+uu_dtpath/uu_mem                 0.09836    0.007303   1.876e-05      0.1057       4.055  
+uu_dtpath/uu_wb                 0.007402     0.01347   8.449e-06     0.02088      0.8015  
+uu_dtpath/uu_dec/uu_reg_file
+                                    1.03      0.2813   0.0002909       1.311       50.32  
+uu_dtpath/uu_dec/uu_ctrl_unit
+                               0.0008474    0.001145     1.5e-06    0.001994      0.0765  
+uu_dtpath/uu_dec/uu_extend
+                                0.001988    0.002338   2.509e-06    0.004328      0.1661  
+uu_dtpath/uu_exec/uu_alu          0.1946      0.1975   0.0001418      0.3923       15.05  
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power: uu_dtpath/uu_exec/uu_alu/FE_OFC853_n_342 (CLKINVX20):         0.002984 
+*                Highest Leakage Power: uu_dtpath/uu_fetch/FE_OCPC1128_n_129 (CLKBUFX20):        6.208e-07 
+*          Total Cap:      2.87068e-11 F
+*          Total instances in design:  7174
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+
