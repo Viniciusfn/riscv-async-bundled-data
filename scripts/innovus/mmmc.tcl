@@ -30,3 +30,6 @@ create_analysis_view \
 set_analysis_view \
     -setup setup \
     -hold setup
+
+# To enable OCV
+#setAnalysisMode -analysisType onChipVariation

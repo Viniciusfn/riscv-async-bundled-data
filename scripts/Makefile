@@ -59,4 +59,4 @@ innovus:
 	innovus -files ../scripts/innovus/setup.tcl
 
 clean:
-	rm -rf obj_dir *.vcd *.log *.cmd $(WAVE_FILE)
+	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob 

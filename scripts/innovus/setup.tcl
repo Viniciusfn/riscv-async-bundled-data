@@ -7,7 +7,7 @@ set DESIGN ariscv
 
 set NETLIST_PATH  ../structural
 set SCRIPTS_PATH  ../scripts
-set REPORTS_PATH  ../reports/innovus
+set REPORT_PATH  ../reports/innovus
 set RESULTS_PATH  ../structural/innovus
 
 # LEFS and LIBS ---------------------------------
@@ -45,5 +45,9 @@ set init_pwr_net VDD
 set init_gnd_net VSS
 
 init_design
+
+#########################################################
+# RUN P&R
+#########################################################
 
 source ${SCRIPTS_PATH}/innovus/run.tcl
