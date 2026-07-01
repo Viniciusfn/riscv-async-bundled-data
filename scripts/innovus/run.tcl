@@ -1,4 +1,14 @@
 #########################################################
+# Pre P&R
+#########################################################
+
+set dt_insts [dbGet top.insts.name *_DONT_TOUCH]
+
+foreach inst $dt_insts {
+    set_dont_touch $inst true
+}
+
+#########################################################
 # Floorplan
 #########################################################
 
@@ -41,7 +51,7 @@ routeDesign
 
 report_area -out_file "$REPORT_PATH/area.rpt"
 report_power -hierarchy all -outfile "$REPORT_PATH/power.rpt"
-report_timing -max_paths 20 -path_type full_clock -net > $REPORT_PATH/timing.rpt
+report_timing -max_paths 20 -path_type full_clock > $REPORT_PATH/timing.rpt
 report_constraint -all_violators > $REPORT_PATH/all_viol.rpt
 report_clocks > $REPORT_PATH/clocks.rpt
 verifyConnectivity > $REPORT_PATH/connectivity.rpt
