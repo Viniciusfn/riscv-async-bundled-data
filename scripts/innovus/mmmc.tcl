@@ -19,7 +19,7 @@ create_constraint_mode \
         ${SCRIPTS_PATH}/genus/defines.tcl \
         ${SCRIPTS_PATH}/genus/clocks.tcl \
         ${SCRIPTS_PATH}/genus/io_delays.tcl \
-        ${SCRIPTS_PATH}/genus/timing_exceptions.tcl \
+        ${SCRIPTS_PATH}/innovus/timing_exceptions.tcl \
     ]
 
 create_analysis_view \

@@ -1,11 +1,11 @@
 VERIFY_CONNECTIVITY use new engine.
 
 ******** Start: VERIFY CONNECTIVITY ********
-Start Time: Tue Jun 30 18:27:14 2026
+Start Time: Thu Jul  2 16:30:06 2026
 
 Design Name: ariscv
 Database Units: 2000
-Design Boundary: (0.0000, 0.0000) (247.4000, 247.1900)
+Design Boundary: (0.0000, 0.0000) (226.8000, 226.6700)
 Error Limit = 1000; Warning Limit = 50
 Check all nets
 Use 4 pthreads
@@ -17,7 +17,7 @@ Begin Summary
     2 total info(s) created.
 End Summary
 
-End Time: Tue Jun 30 18:27:14 2026
+End Time: Thu Jul  2 16:30:06 2026
 Time Elapsed: 0:00:00.0
 
 ******** End: VERIFY CONNECTIVITY ********

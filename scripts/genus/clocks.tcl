@@ -19,8 +19,8 @@ if { ${FAST_CORNER} == 1 } {
     set DELAY_EM_MW [expr ${MEM_IO_PERIOD}]
     set DELAY_MW_REG 0.400
     set DELAY_REG_DE 0.400
-    set DELAY_PC_PC 0.000; # To be checked
-    set DELAY_DE_DE 0.000; # To be checked
+    set PERIOD_PC_PC 0.000; # To be checked
+    set PERIOD_DE_DE 0.000; # To be checked
 } else {
     # Slow 1.0v
     set DELAY_PC_FD [expr ${MEM_IO_PERIOD} + 0.200]

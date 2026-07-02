@@ -1,7 +1,7 @@
 ## Set the DESIGN 
 set DESIGN ariscv
 
-set SYNC_VERSION 1
+set SYNC_VERSION 0
 set PROTO_LC 0
 set LC_TOKENS 1
 

@@ -54,6 +54,7 @@ report_power -hierarchy all -outfile "$REPORT_PATH/power.rpt"
 report_timing -max_paths 20 -path_type full_clock > $REPORT_PATH/timing.rpt
 report_constraint -all_violators > $REPORT_PATH/all_viol.rpt
 report_clocks > $REPORT_PATH/clocks.rpt
+report_clocks -delay_adjustment_table > $REPORT_PATH/clocks_delay_adjustment.rpt
 verifyConnectivity > $REPORT_PATH/connectivity.rpt
 checkFPlan -outFile "$REPORT_PATH/checkFPlan.rpt"
 checkPlace > $REPORT_PATH/checkPlace.rpt
