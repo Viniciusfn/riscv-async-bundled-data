@@ -1,305 +1,301 @@
 **WARN: (IMPFP-3803):	Command "reportRoute" is obsolete and has been replaced by "report_route". 
 The obsolete command still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use "report_route".
 Type 'man IMPFP-3803' for more detail.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/CTS_18 has routing id (31) setting for "top_preferred_shield_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/CTS_30 has routing id (31) setting for "top_preferred_shield_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/CTS_35 has routing id (31) setting for "top_preferred_shield_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/CTS_31 has routing id (31) setting for "top_preferred_shield_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/CTS_34 has routing id (31) setting for "top_preferred_shield_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/uu_reg_file/n_709 has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd2_w[0] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd2_w[2] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd2_w[6] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd2_w[24] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[6] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[7] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[19] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[20] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
+#WARNING (NRIG-1330) Net o_writeAddr[0] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
+#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd2_w[1] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
+#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd2_w[18] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
+#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd2_w[25] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
 #WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[21] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[23] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[26] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_fetch/CTS_37 has routing id (31) setting for "top_preferred_shield_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/uu_reg_file/FE_OFN210_n_1004 has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/uu_reg_file/FE_OFN212_n_2643 has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
-#WARNING (EMS-27) Message (NRIG-1330) has exceeded the current message display limit of 20.
-#To increase the message display limit, refer to the product command reference manual.
+#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/rd1_w[22] has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
+#WARNING (NRIG-1330) Net uu_dtpath/uu_dec/FE_OFN322_rd1_w_0 has routing id (31) setting for "top_preferred_layer" out of routing layer range (0, 11]. NanoRoute will change it to default setting and continue.
 #num needed restored net=0
-#need_extraction net=0 (total=7153)
+#need_extraction net=0 (total=6569)
 #WARNING (NRDB-2120) Special net VDD is missing wiring shapes, will disable tie-net connections to this net.
 #WARNING (NRDB-2120) Special net VSS is missing wiring shapes, will disable tie-net connections to this net.
 #
 # statistics:
 #Cpu time = 00:00:01
 #Elapsed time = 00:00:00
-#Increased memory = -30.33 (MB)
-#Total memory = 2628.78 (MB)
-#Peak memory = 2838.03 (MB)
-#Number of warnings = 23
-#Total number of warnings = 80
+#Increased memory = -33.85 (MB)
+#Total memory = 2584.71 (MB)
+#Peak memory = 2826.46 (MB)
+#Number of warnings = 9
+#Total number of warnings = 32
 #Number of fails = 0
 #Total number of fails = 0
-#Complete  on Thu Jul  2 16:30:07 2026
+#Complete  on Thu Jul  2 17:01:06 2026
 #
 *** Statistics for net list ariscv ***
-Number of cells      = 6793
-Number of nets       = 6876
+Number of cells      = 6203
+Number of nets       = 6285
 Number of tri-nets   = 0
-Number of degen nets = 16
-Number of pins       = 26243
+Number of degen nets = 15
+Number of pins       = 25072
 Number of i/os       = 168
 
-Number of nets with    1 terms = 16 (0.2%)
-Number of nets with    2 terms = 4084 (59.4%)
-Number of nets with    3 terms = 837 (12.2%)
-Number of nets with    4 terms = 1211 (17.6%)
-Number of nets with    5 terms = 121 (1.8%)
-Number of nets with    6 terms = 53 (0.8%)
-Number of nets with    7 terms = 59 (0.9%)
-Number of nets with    8 terms = 52 (0.8%)
-Number of nets with    9 terms = 72 (1.0%)
-Number of nets with >=10 terms = 371 (5.4%)
+Number of nets with    1 terms = 15 (0.2%)
+Number of nets with    2 terms = 3517 (56.0%)
+Number of nets with    3 terms = 822 (13.1%)
+Number of nets with    4 terms = 1230 (19.6%)
+Number of nets with    5 terms = 126 (2.0%)
+Number of nets with    6 terms = 54 (0.9%)
+Number of nets with    7 terms = 54 (0.9%)
+Number of nets with    8 terms = 63 (1.0%)
+Number of nets with    9 terms = 62 (1.0%)
+Number of nets with >=10 terms = 342 (5.4%)
 
-*** 154 Primitives used:
+*** 164 Primitives used:
 Primitive XOR3X1 (1 insts)
-Primitive XNOR2X2 (6 insts)
-Primitive XNOR2X1 (62 insts)
+Primitive XNOR2X2 (2 insts)
+Primitive XNOR2X1 (65 insts)
 Primitive SDFFRX2 (1 insts)
-Primitive SDFFRHQX8 (10 insts)
-Primitive SDFFRHQX4 (126 insts)
-Primitive SDFFRHQX2 (310 insts)
-Primitive SDFFRHQX1 (577 insts)
-Primitive OR4X1 (9 insts)
-Primitive OR3X6 (2 insts)
-Primitive OR3X1 (15 insts)
-Primitive OR2X8 (3 insts)
-Primitive OR2X6 (42 insts)
-Primitive OR2X4 (3 insts)
-Primitive OR2X2 (16 insts)
-Primitive OR2X1 (62 insts)
+Primitive SDFFRHQX8 (13 insts)
+Primitive SDFFRHQX4 (25 insts)
+Primitive SDFFRHQX2 (155 insts)
+Primitive SDFFRHQX1 (830 insts)
+Primitive OR4X6 (1 insts)
+Primitive OR4X1 (8 insts)
+Primitive OR3X6 (6 insts)
+Primitive OR3X4 (1 insts)
+Primitive OR3X2 (1 insts)
+Primitive OR3X1 (14 insts)
+Primitive OR2XL (1 insts)
+Primitive OR2X8 (7 insts)
+Primitive OR2X6 (33 insts)
+Primitive OR2X4 (5 insts)
+Primitive OR2X2 (13 insts)
+Primitive OR2X1 (65 insts)
 Primitive OAI32X4 (2 insts)
 Primitive OAI32X1 (1 insts)
 Primitive OAI31X1 (11 insts)
-Primitive OAI2BB2X4 (4 insts)
-Primitive OAI2BB2X2 (6 insts)
-Primitive OAI2BB2X1 (2 insts)
-Primitive OAI2BB1X4 (4 insts)
-Primitive OAI2BB1X2 (25 insts)
-Primitive OAI2BB1X1 (116 insts)
+Primitive OAI2BB2X4 (6 insts)
+Primitive OAI2BB2X2 (7 insts)
+Primitive OAI2BB1X4 (1 insts)
+Primitive OAI2BB1X2 (19 insts)
+Primitive OAI2BB1X1 (114 insts)
 Primitive OAI22X4 (3 insts)
-Primitive OAI22X2 (12 insts)
-Primitive OAI22X1 (9 insts)
-Primitive OAI222X4 (1 insts)
-Primitive OAI222X2 (5 insts)
-Primitive OAI222X1 (3 insts)
-Primitive OAI221X2 (8 insts)
+Primitive OAI22X2 (15 insts)
+Primitive OAI22X1 (6 insts)
+Primitive OAI222X4 (2 insts)
+Primitive OAI222X2 (3 insts)
+Primitive OAI222X1 (4 insts)
+Primitive OAI221X4 (1 insts)
+Primitive OAI221X2 (7 insts)
 Primitive OAI221X1 (4 insts)
-Primitive OAI21X4 (1 insts)
-Primitive OAI21X2 (12 insts)
-Primitive OAI21X1 (89 insts)
+Primitive OAI21X2 (20 insts)
+Primitive OAI21X1 (81 insts)
 Primitive OAI211X1 (1 insts)
-Primitive OA22X1 (50 insts)
+Primitive OA22X4 (1 insts)
+Primitive OA22X2 (1 insts)
+Primitive OA22X1 (48 insts)
 Primitive OA21X1 (43 insts)
+Primitive NOR4X4 (1 insts)
 Primitive NOR4X2 (1 insts)
-Primitive NOR3X8 (4 insts)
-Primitive NOR3X6 (6 insts)
-Primitive NOR3X4 (5 insts)
-Primitive NOR3X2 (2 insts)
-Primitive NOR3X1 (7 insts)
+Primitive NOR3X8 (1 insts)
+Primitive NOR3X4 (1 insts)
+Primitive NOR3X1 (9 insts)
 Primitive NOR3BX4 (1 insts)
-Primitive NOR3BX2 (1 insts)
-Primitive NOR3BX1 (7 insts)
-Primitive NOR2X8 (10 insts)
-Primitive NOR2X6 (28 insts)
-Primitive NOR2X4 (39 insts)
-Primitive NOR2X2 (79 insts)
-Primitive NOR2X1 (141 insts)
+Primitive NOR3BX1 (8 insts)
+Primitive NOR2XL (1 insts)
+Primitive NOR2X8 (2 insts)
+Primitive NOR2X6 (30 insts)
+Primitive NOR2X4 (30 insts)
+Primitive NOR2X2 (40 insts)
+Primitive NOR2X1 (116 insts)
 Primitive NOR2BX4 (7 insts)
-Primitive NOR2BX2 (21 insts)
-Primitive NOR2BX1 (187 insts)
-Primitive NAND4X2 (3 insts)
-Primitive NAND4X1 (6 insts)
-Primitive NAND3X8 (3 insts)
-Primitive NAND3X6 (2 insts)
-Primitive NAND3X4 (27 insts)
-Primitive NAND3X2 (10 insts)
-Primitive NAND3X1 (11 insts)
+Primitive NOR2BX2 (4 insts)
+Primitive NOR2BX1 (113 insts)
+Primitive NAND4XL (12 insts)
+Primitive NAND4X4 (6 insts)
+Primitive NAND4X2 (10 insts)
+Primitive NAND4X1 (49 insts)
+Primitive NAND3XL (1 insts)
+Primitive NAND3X8 (4 insts)
+Primitive NAND3X6 (4 insts)
+Primitive NAND3X4 (44 insts)
+Primitive NAND3X2 (28 insts)
+Primitive NAND3X1 (13 insts)
 Primitive NAND3BXL (2 insts)
 Primitive NAND3BX4 (1 insts)
-Primitive NAND3BX2 (3 insts)
-Primitive NAND3BX1 (3 insts)
-Primitive NAND2XL (3 insts)
-Primitive NAND2X8 (72 insts)
-Primitive NAND2X6 (65 insts)
-Primitive NAND2X4 (39 insts)
-Primitive NAND2X2 (148 insts)
-Primitive NAND2X1 (384 insts)
-Primitive NAND2BX4 (14 insts)
-Primitive NAND2BX2 (7 insts)
-Primitive NAND2BX1 (79 insts)
-Primitive MXI2XL (26 insts)
-Primitive MXI2X2 (12 insts)
-Primitive MXI2X1 (16 insts)
+Primitive NAND3BX2 (1 insts)
+Primitive NAND3BX1 (5 insts)
+Primitive NAND2XL (11 insts)
+Primitive NAND2X8 (30 insts)
+Primitive NAND2X6 (67 insts)
+Primitive NAND2X4 (32 insts)
+Primitive NAND2X2 (31 insts)
+Primitive NAND2X1 (130 insts)
+Primitive NAND2BX4 (7 insts)
+Primitive NAND2BX2 (6 insts)
+Primitive NAND2BX1 (58 insts)
+Primitive MXI2XL (21 insts)
+Primitive MXI2X6 (1 insts)
+Primitive MXI2X2 (15 insts)
+Primitive MXI2X1 (18 insts)
 Primitive MX2X1 (149 insts)
-Primitive INVXL (16 insts)
+Primitive INVXL (32 insts)
 Primitive INVX8 (2 insts)
-Primitive INVX4 (1 insts)
-Primitive INVX3 (13 insts)
-Primitive INVX2 (37 insts)
-Primitive INVX1 (297 insts)
-Primitive DFFRX2 (8 insts)
-Primitive DFFRX1 (7 insts)
-Primitive DFFRHQX8 (1 insts)
-Primitive DFFRHQX4 (61 insts)
-Primitive DFFRHQX2 (2 insts)
-Primitive DFFRHQX1 (468 insts)
-Primitive CLKXOR2X2 (1 insts)
-Primitive CLKXOR2X1 (26 insts)
+Primitive INVX6 (1 insts)
+Primitive INVX3 (6 insts)
+Primitive INVX2 (28 insts)
+Primitive INVX1 (173 insts)
+Primitive DFFRX2 (10 insts)
+Primitive DFFRX1 (4 insts)
+Primitive DFFRHQX8 (2 insts)
+Primitive DFFRHQX4 (70 insts)
+Primitive DFFRHQX2 (1 insts)
+Primitive DFFRHQX1 (460 insts)
+Primitive CLKXOR2X1 (24 insts)
+Primitive CLKMX2X3 (3 insts)
 Primitive CLKMX2X2 (12 insts)
-Primitive CLKINVX8 (9 insts)
-Primitive CLKINVX6 (12 insts)
-Primitive CLKINVX4 (4 insts)
-Primitive CLKBUFX8 (21 insts)
-Primitive CLKBUFX6 (47 insts)
-Primitive CLKBUFX4 (191 insts)
-Primitive CLKBUFX3 (135 insts)
-Primitive CLKBUFX20 (2 insts)
-Primitive CLKBUFX2 (12 insts)
-Primitive CLKAND2X6 (85 insts)
-Primitive CLKAND2X3 (139 insts)
-Primitive CLKAND2X2 (69 insts)
-Primitive CLKAND2X12 (3 insts)
-Primitive BUFX4 (22 insts)
-Primitive BUFX3 (34 insts)
-Primitive BUFX2 (351 insts)
-Primitive BUFX12 (27 insts)
+Primitive CLKINVX8 (11 insts)
+Primitive CLKINVX6 (9 insts)
+Primitive CLKINVX4 (5 insts)
+Primitive CLKINVX20 (1 insts)
+Primitive CLKINVX12 (1 insts)
+Primitive CLKBUFX8 (26 insts)
+Primitive CLKBUFX6 (52 insts)
+Primitive CLKBUFX4 (199 insts)
+Primitive CLKBUFX3 (139 insts)
+Primitive CLKBUFX20 (1 insts)
+Primitive CLKBUFX2 (14 insts)
+Primitive CLKAND2X6 (46 insts)
+Primitive CLKAND2X4 (3 insts)
+Primitive CLKAND2X3 (59 insts)
+Primitive CLKAND2X2 (104 insts)
+Primitive CLKAND2X12 (2 insts)
+Primitive BUFX4 (11 insts)
+Primitive BUFX3 (42 insts)
+Primitive BUFX2 (367 insts)
+Primitive BUFX12 (10 insts)
 Primitive AOI32X4 (1 insts)
 Primitive AOI32X1 (2 insts)
-Primitive AOI31X2 (1 insts)
-Primitive AOI31X1 (4 insts)
+Primitive AOI31X2 (3 insts)
+Primitive AOI31X1 (2 insts)
 Primitive AOI2BB2X2 (1 insts)
 Primitive AOI2BB2X1 (2 insts)
 Primitive AOI2BB1X4 (1 insts)
-Primitive AOI2BB1X2 (1 insts)
-Primitive AOI2BB1X1 (26 insts)
-Primitive AOI22XL (4 insts)
-Primitive AOI22X4 (85 insts)
-Primitive AOI22X2 (212 insts)
-Primitive AOI22X1 (526 insts)
-Primitive AOI222X4 (16 insts)
-Primitive AOI222X2 (20 insts)
-Primitive AOI222X1 (2 insts)
-Primitive AOI221X4 (4 insts)
-Primitive AOI221X2 (12 insts)
-Primitive AOI221X1 (26 insts)
-Primitive AOI21XL (2 insts)
-Primitive AOI21X4 (1 insts)
-Primitive AOI21X2 (10 insts)
+Primitive AOI2BB1X2 (5 insts)
+Primitive AOI2BB1X1 (22 insts)
+Primitive AOI22XL (7 insts)
+Primitive AOI22X4 (13 insts)
+Primitive AOI22X2 (112 insts)
+Primitive AOI22X1 (688 insts)
+Primitive AOI222X4 (3 insts)
+Primitive AOI222X2 (41 insts)
+Primitive AOI222X1 (15 insts)
+Primitive AOI221X4 (18 insts)
+Primitive AOI221X2 (55 insts)
+Primitive AOI221X1 (30 insts)
+Primitive AOI21XL (1 insts)
+Primitive AOI21X4 (5 insts)
+Primitive AOI21X2 (5 insts)
 Primitive AOI21X1 (58 insts)
 Primitive AOI211XL (1 insts)
-Primitive AOI211X2 (2 insts)
-Primitive AOI211X1 (3 insts)
-Primitive AO22X2 (2 insts)
-Primitive AO22X1 (132 insts)
-Primitive AO21XL (2 insts)
-Primitive AO21X4 (2 insts)
-Primitive AO21X2 (2 insts)
-Primitive AO21X1 (31 insts)
+Primitive AOI211X2 (3 insts)
+Primitive AOI211X1 (2 insts)
+Primitive AO22X2 (3 insts)
+Primitive AO22X1 (171 insts)
+Primitive AO21X4 (5 insts)
+Primitive AO21X2 (3 insts)
+Primitive AO21X1 (29 insts)
 Primitive AND3XL (2 insts)
 Primitive AND3X6 (1 insts)
 Primitive AND3X1 (1 insts)
-Primitive AND2XL (19 insts)
-Primitive AND2X8 (25 insts)
-Primitive AND2X6 (24 insts)
-Primitive AND2X4 (11 insts)
-Primitive AND2X2 (5 insts)
-Primitive AND2X1 (106 insts)
+Primitive AND2XL (28 insts)
+Primitive AND2X8 (18 insts)
+Primitive AND2X6 (57 insts)
+Primitive AND2X4 (3 insts)
+Primitive AND2X2 (3 insts)
+Primitive AND2X1 (82 insts)
 Primitive ADDHX1 (2 insts)
 ************
 *** Net length and connection length statistics (cell ariscv) ***
 
-Total net length = 1.174e+05 (5.673e+04 6.071e+04)
+Total net length = 1.142e+05 (5.415e+04 6.008e+04)
 
-Avg net length = 1.708e+01 (sigma = 2.866e+01)
-Sqrt of avg square net length = 3.336e+01
+Avg net length = 1.818e+01 (sigma = 3.004e+01)
+Sqrt of avg square net length = 3.511e+01
 
-Avg connection length = 6.059e+00 (sigma = 8.809e+00)
-Sqrt of avg square connection length = 1.069e+01
+Avg connection length = 6.075e+00 (sigma = 8.771e+00)
+Sqrt of avg square connection length = 1.067e+01
 
 Net and connection length distribution:
 
 [length   range   ]      #net #connection
-[0.00e+00 4.00e+00]:     1830     3268
-[4.00e+00 8.00e+00]:     1593     1903
-[8.00e+00 1.20e+01]:     1225      632
-[1.20e+01 1.60e+01]:      554      268
-[1.60e+01 2.00e+01]:      340      175
-[2.00e+01 2.40e+01]:      226      117
-[2.40e+01 2.80e+01]:      163       94
-[2.80e+01 3.20e+01]:      132       97
-[3.20e+01 3.60e+01]:       82       66
-[3.60e+01 4.00e+01]:       77       45
-[4.00e+01 4.40e+01]:       64       31
-[4.40e+01 4.80e+01]:       49       34
-[4.80e+01 5.20e+01]:       48       26
-[5.20e+01 5.60e+01]:       44       19
-[5.60e+01 6.00e+01]:       35       15
-[6.00e+01 6.40e+01]:       29       10
-[6.40e+01 6.80e+01]:       35        8
-[6.80e+01 7.20e+01]:       22       10
-[7.20e+01 7.60e+01]:       24        8
-[7.60e+01 8.00e+01]:       16        9
-[8.00e+01 8.40e+01]:       14        7
-[8.40e+01 8.80e+01]:       12        3
-[8.80e+01 9.20e+01]:        9        2
-[9.20e+01 9.60e+01]:       12        2
-[9.60e+01 1.00e+02]:       20        5
-[1.00e+02 1.04e+02]:        6        2
-[1.04e+02 1.08e+02]:       11        0
-[1.08e+02 1.12e+02]:       19        0
-[1.12e+02 1.16e+02]:       11        0
-[1.16e+02 1.20e+02]:       16        5
-[1.20e+02 1.24e+02]:        9        4
-[1.24e+02 1.28e+02]:       10        4
-[1.28e+02 1.32e+02]:        3        1
-[1.32e+02 1.36e+02]:        8        5
-[1.36e+02 1.40e+02]:        7        0
-[1.40e+02 1.44e+02]:        7        0
-[1.44e+02 1.48e+02]:       12        1
-[1.48e+02 1.52e+02]:       17        0
+[0.00e+00 4.00e+00]:     1384     2928
+[4.00e+00 8.00e+00]:     1514     1706
+[8.00e+00 1.20e+01]:     1256      592
+[1.20e+01 1.60e+01]:      490      269
+[1.60e+01 2.00e+01]:      281      161
+[2.00e+01 2.40e+01]:      231      111
+[2.40e+01 2.80e+01]:      208      106
+[2.80e+01 3.20e+01]:      133       84
+[3.20e+01 3.60e+01]:      111       84
+[3.60e+01 4.00e+01]:       79       60
+[4.00e+01 4.40e+01]:       58       34
+[4.40e+01 4.80e+01]:       40       24
+[4.80e+01 5.20e+01]:       38       13
+[5.20e+01 5.60e+01]:       41       15
+[5.60e+01 6.00e+01]:       29        9
+[6.00e+01 6.40e+01]:       29        6
+[6.40e+01 6.80e+01]:       19        7
+[6.80e+01 7.20e+01]:       20        7
+[7.20e+01 7.60e+01]:       18        7
+[7.60e+01 8.00e+01]:       22       15
+[8.00e+01 8.40e+01]:       23        9
+[8.40e+01 8.80e+01]:        9        2
+[8.80e+01 9.20e+01]:       12        8
+[9.20e+01 9.60e+01]:       13        4
+[9.60e+01 1.00e+02]:        7        2
+[1.00e+02 1.04e+02]:       15        3
+[1.04e+02 1.08e+02]:       10        1
+[1.08e+02 1.12e+02]:       11        2
+[1.12e+02 1.16e+02]:       15        4
+[1.16e+02 1.20e+02]:       13        5
+[1.20e+02 1.24e+02]:       12        4
+[1.24e+02 1.28e+02]:        4        2
+[1.28e+02 1.32e+02]:        2        1
+[1.32e+02 1.36e+02]:        1        0
+[1.36e+02 1.40e+02]:        4        0
+[1.40e+02 1.44e+02]:        5        0
+[1.44e+02 1.48e+02]:        2        0
+[1.48e+02 1.52e+02]:        3        0
 [1.52e+02 1.56e+02]:       13        0
-[1.56e+02 1.60e+02]:        4        0
+[1.56e+02 1.60e+02]:       15        0
 [1.60e+02 1.64e+02]:        8        0
-[1.64e+02 1.68e+02]:       11        0
-[1.68e+02 1.72e+02]:        4        0
-[1.72e+02 1.76e+02]:        6        0
-[1.76e+02 1.80e+02]:        3        0
-[1.80e+02 1.84e+02]:        3        0
-[1.84e+02 1.88e+02]:        4        0
-[1.88e+02 1.92e+02]:        4        0
-[1.92e+02 1.96e+02]:        6        0
-[1.96e+02 2.00e+02]:        2        0
-[2.04e+02 2.08e+02]:        7        0
-[2.08e+02 2.12e+02]:        2        0
-[2.12e+02 2.16e+02]:        1        0
-[2.20e+02 2.24e+02]:        3        0
-[2.24e+02 2.28e+02]:        3        0
+[1.64e+02 1.68e+02]:        7        0
+[1.68e+02 1.72e+02]:       14        0
+[1.72e+02 1.76e+02]:       10        0
+[1.76e+02 1.80e+02]:       12        0
+[1.80e+02 1.84e+02]:       12        0
+[1.84e+02 1.88e+02]:        8        0
+[1.88e+02 1.92e+02]:        2        0
+[1.92e+02 1.96e+02]:        5        0
+[1.96e+02 2.00e+02]:        4        0
+[2.00e+02 2.04e+02]:        4        0
+[2.08e+02 2.12e+02]:        1        0
+[2.12e+02 2.16e+02]:        2        0
+[2.16e+02 2.20e+02]:        3        0
+[2.20e+02 2.24e+02]:        1        0
 [2.28e+02 2.32e+02]:        1        0
+[2.56e+02 2.60e+02]:        1        0
 
 
 Total number of long connections = 0
 Io: nrCon=0
 
 
-Total length: 1.421e+05um, number of vias: 54863
-M1(H) length: 1.885e+03um, number of vias: 26089
-M2(V) length: 3.973e+04um, number of vias: 20873
-M3(H) length: 4.966e+04um, number of vias: 6419
-M4(V) length: 3.383e+04um, number of vias: 1019
-M5(H) length: 1.110e+04um, number of vias: 152
-M6(V) length: 1.335e+03um, number of vias: 101
-M7(H) length: 1.486e+03um, number of vias: 78
-M8(V) length: 9.901e+02um, number of vias: 64
-M9(H) length: 1.375e+03um, number of vias: 38
-M10(V) length: 1.008e+02um, number of vias: 30
-M11(H) length: 5.935e+02um
+Total length: 1.351e+05um, number of vias: 51778
+M1(H) length: 2.370e+03um, number of vias: 25027
+M2(V) length: 3.848e+04um, number of vias: 19759
+M3(H) length: 4.622e+04um, number of vias: 5797
+M4(V) length: 3.167e+04um, number of vias: 831
+M5(H) length: 1.049e+04um, number of vias: 125
+M6(V) length: 1.321e+03um, number of vias: 87
+M7(H) length: 1.617e+03um, number of vias: 69
+M8(V) length: 1.410e+03um, number of vias: 51
+M9(H) length: 1.240e+03um, number of vias: 20
+M10(V) length: 8.812e+01um, number of vias: 12
+M11(H) length: 2.234e+02um
 

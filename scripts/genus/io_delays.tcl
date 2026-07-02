@@ -5,14 +5,13 @@
 # Set I/O delay
 # Considering max input and output delay of 20% of clock period
 
-set IN_IO_MAX_DELAY  [expr 1.0*${MEM_IO_PERIOD}]
+set IN_IO_MAX_DELAY  [expr 0.75*${MEM_IO_PERIOD}]
 set OUT_IO_MAX_DELAY [expr 0.25*${MEM_IO_PERIOD}]
 set SYNC_IO_DELAY    [expr 0.2*${PERIOD_SYNC_CLK}]
 
 if { ${SYNC_VERSION} == 0 } {
     set_input_delay  -max ${IN_IO_MAX_DELAY} -clock [get_clocks {ACLK_PC_0}] [get_ports {i_inst}]
     set_input_delay  -min 0.050              -clock [get_clocks {ACLK_PC_0}] [get_ports {i_inst}]
-
     set_output_delay -max ${OUT_IO_MAX_DELAY} -clock [get_clocks {CAPTURE_PC_FD}] [get_ports {o_pc}]
     set_output_delay -min 0.050               -clock [get_clocks {CAPTURE_PC_FD}] [get_ports {o_pc}]
 
