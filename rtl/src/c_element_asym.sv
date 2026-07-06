@@ -4,7 +4,8 @@ module c_element_asym #(
    input  logic a, // strong input
    input  logic b, // weak input
    input  logic rst_n,
-   output logic s
+   output logic s,
+   output logic s_n
 );
 
    `ifndef SYNTHESIS
@@ -20,6 +21,8 @@ module c_element_asym #(
          endcase
       end
    end
+
+   assign s_n = ~s;
 
    `else
    wire n1,n2,n3,i1;
@@ -49,7 +52,7 @@ module c_element_asym #(
          .Y(i1)
       );
 
-      OR2X8 DRV_DONT_TOUCH(
+      OR2X8 OR2_3_DONT_TOUCH(
          .A(n3),
          .B(i1),
          .Y(s)
@@ -57,13 +60,18 @@ module c_element_asym #(
    
    end else begin
 
-      AND2X8 DRV_DONT_TOUCH(
+      AND2X8 AND2_2_DONT_TOUCH(
          .A(n3),
          .B(rst_n),
          .Y(s)
       );
    
    end endgenerate
+
+   INVX8 DRV_DONT_TOUCH(
+      .A(s),
+      .Y(s_n)
+   );
 
    `endif
 

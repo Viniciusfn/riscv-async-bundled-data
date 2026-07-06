@@ -36,7 +36,11 @@ if { ${FAST_CORNER} == 1 } {
 
 set PERIOD_PC_0  [expr ${PERIOD_PC_PC}]
 set PERIOD_FD_1  0; #[expr 2*${DELAY_FD_DE}]
-set PERIOD_DE_2  [expr ${PERIOD_DE_DE}]
+if { ${PROTO_LC} == 1 } {
+    set PERIOD_DE_2  [expr ${PERIOD_DE_DE}]
+} else {
+    set PERIOD_DE_2  0
+}
 set PERIOD_EM_3  0; #[expr 2*${DELAY_EM_MW}]
 set PERIOD_MW_4  0; #[expr 2*${DELAY_MW_REG}]
 set PERIOD_REG_5 [expr ${DELAY_REG_DE}]

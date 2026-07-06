@@ -18,7 +18,7 @@ module lc_cell #(
    localparam C_ELEM_INIT = (INIT) ?0 :1;
 
    /* Combinational Logic */
-   logic c1_out_w, c2_out_w;
+   logic c1_out_w, c2_out_w, c1_out_n_w, c2_out_n_w;
 
    /* C element instance */
    c_element_asym #(
@@ -27,7 +27,8 @@ module lc_cell #(
       .a(i_ack),
       .b(~i_req),
       .rst_n(rst_n),
-      .s(c1_out_w)
+      .s(c1_out_w),
+      .s_n(c1_out_n_w)
    );
 
    c_element_asym #(
@@ -36,15 +37,16 @@ module lc_cell #(
       .a(c1_out_w),
       .b(i_req),
       .rst_n(rst_n),
-      .s(c2_out_w)
+      .s(c2_out_w),
+      .s_n(c2_out_n_w)
    );
 
    /* Output assignment */
    //AND gate
-   assign o_ack = (~c1_out_w) & c2_out_w;
+   assign o_ack = c1_out_n_w & c2_out_w;
 
    //Request output
-   assign o_req = ~c2_out_w;
+   assign o_req = c2_out_n_w;
    assign o_aclk = o_req;
 
 endmodule
