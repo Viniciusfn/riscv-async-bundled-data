@@ -43,7 +43,7 @@ routeDesign
 # Post-Route
 #########################################################
 
-#optDesign -postRoute ;# Requires OCV enabled
+optDesign -postRoute ;# Requires OCV enabled
 
 #########################################################
 # Reports
