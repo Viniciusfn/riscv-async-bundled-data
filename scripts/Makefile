@@ -63,8 +63,10 @@ generate-vcd:
 		-input ../scripts/xcelium/dump_vcd.tcl \
 		-f ../srclists/rtl.lst -f ../srclists/tb.lst \
 		-top $(TB_NAME) \
-		-DXCELIUM_RUN \
 		-l ../logs/xcelium/xrun.log
 
+joules:
+	joules -batch -files ../scripts/joules/run.tcl -work ../logs/joules
+
 clean:
-	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob xcelium.d joules_work *.rpt *.old
+	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob xcelium.d joules_work *.rpt *.old *.history
