@@ -554,7 +554,7 @@ module tb_ariscv_soc_top;
    initial begin
       `ifndef BENCHMARK_TEST
       $dumpfile("wave_trace.vcd");
-      $dumpvars(0, tb_ariscv);
+      // $dumpvars(0, tb_ariscv);
       `endif
 
       /* INITIALIZING */

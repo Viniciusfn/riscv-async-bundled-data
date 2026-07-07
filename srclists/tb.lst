@@ -1,0 +1,4 @@
+../rtl/src/ariscv_soc_top.sv
+../model/dt_mem_model.sv
+../model/inst_mem_model.sv
+../rtl/tb/tb_ariscv_soc_top.sv

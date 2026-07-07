@@ -26,6 +26,7 @@
 *.dmp
 *.log~
 logs/genus
+logs/xcelium
 *.cmd*
 *.csrc
 *.vcd

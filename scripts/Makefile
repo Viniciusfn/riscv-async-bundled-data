@@ -58,5 +58,13 @@ lec:
 innovus:
 	innovus -files ../scripts/innovus/setup.tcl -no_gui
 
+generate-vcd:
+	xrun -sv -access +rwc -timescale 1ns/100ps \
+		-input ../scripts/xcelium/dump_vcd.tcl \
+		-f ../srclists/rtl.lst -f ../srclists/tb.lst \
+		-top $(TB_NAME) \
+		-DXCELIUM_RUN \
+		-l ../logs/xcelium/xrun.log
+
 clean:
-	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob 
+	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob xcelium.d joules_work *.rpt *.old

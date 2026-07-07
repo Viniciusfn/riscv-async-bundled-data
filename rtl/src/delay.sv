@@ -20,6 +20,7 @@ module delay #(
    assign o_data = w_delay[DELAY-1];
 
    `else
+   timeprecision 100ps;
    timeunit 100ps;
    assign #(DELAY) o_data = i_data;
    `endif
