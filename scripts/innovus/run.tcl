@@ -67,7 +67,7 @@ checkDesign -all -noHtml -outFile "$REPORT_PATH/checkDesign.rpt"
 
 saveDesign ${DATABASE_PATH}/${DESIGN}.enc       ;# DEF
 saveNetlist ${RESULTS_PATH}/${DESIGN}_routed.v  ;# Routed Verilog
-#write_sdf ${TIMING_PATH}/${DESIGN}_routed.sdf   ;# SDF
-#defOut ${RESULTS_PATH}/${DESIGN}.def            ;# Export DEF
-#rcOut -spef ${RESULTS_PATH}/top.spef            ;# SPEF
-#streamOut ${RESULTS_PATH}/top.gds               ;# GDS
+write_sdf ${TIMING_PATH}/${DESIGN}_routed.sdf   ;# SDF
+rcOut -spef ${RESULTS_PATH}/${DESIGN}.spef      ;# SPEF
+#defOut ${RESULTS_PATH}/${DESIGN}.def           ;# Export DEF
+#streamOut ${RESULTS_PATH}/${DESIGN}.gds        ;# GDS

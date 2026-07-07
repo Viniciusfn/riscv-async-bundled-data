@@ -17,7 +17,7 @@ COMP_FLAGS  := --cc -Wall $(NO_WARNINGS) --assert --no-stop-fail --exe --trace -
 DEFINES_COREMARK := -DBENCHMARK_TEST -DCOREMARK
 DEFINES_DHRYSTONE := -DBENCHMARK_TEST -DDHRYSTONE
 DEFINES_ISA_TEST := -DISA_TEST
-GTKWFILE    := wave_view.gtkw
+GTKWFILE    := ../scripts/wave_view.gtkw
 
 .PHONY: basic compile_basic run clean coremark
 
@@ -69,4 +69,4 @@ joules:
 	joules -batch -files ../scripts/joules/run.tcl -work ../logs/joules
 
 clean:
-	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob xcelium.d joules_work *.rpt *.old *.history
+	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob xcelium.d joules_work *.rpt *.old *.history ../logs/joules/*
