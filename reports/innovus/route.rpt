@@ -9,14 +9,14 @@ Type 'man IMPFP-3803' for more detail.
 # statistics:
 #Cpu time = 00:00:01
 #Elapsed time = 00:00:00
-#Increased memory = -69.75 (MB)
-#Total memory = 2785.68 (MB)
-#Peak memory = 3106.70 (MB)
+#Increased memory = -58.48 (MB)
+#Total memory = 2777.50 (MB)
+#Peak memory = 3077.57 (MB)
 #Number of warnings = 2
 #Total number of warnings = 20
 #Number of fails = 0
 #Total number of fails = 0
-#Complete  on Wed Jul  8 21:14:06 2026
+#Complete  on Thu Jul  9 09:33:25 2026
 #
 *** Statistics for net list ariscv ***
 Number of cells      = 5852

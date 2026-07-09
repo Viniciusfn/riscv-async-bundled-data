@@ -50,13 +50,24 @@ module tb_ariscv_soc_top;
    logic [ARISCV_PARAMS.NBW_REGISTER-1:0] aux;
    logic [ARISCV_PARAMS.NBW_REGISTER-1:0] tb_reg_dt [(2**ARISCV_PARAMS.NBW_ADDR)-1:0];
    logic reg_clk;
-   logic inst_error_flag;
 
    always #(`PERF_CLK_PERIOD/2) perf_clk = ~perf_clk;
    assign tx_data_reg = dut.uu_dt_mem.memory[TXDATA_REG_ADDR][7:0];
+   `ifdef GATE_LEVEL
+   assign tb_reg_dt[1] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[1] ;
+   assign tb_reg_dt[2] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[2] ;
+   assign tb_reg_dt[3] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[3] ;
+   assign tb_reg_dt[4] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[4] ;
+   assign tb_reg_dt[5] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[5] ;
+   assign tb_reg_dt[6] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[6] ;
+   assign tb_reg_dt[7] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[7] ;
+   assign tb_reg_dt[8] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[8] ;
+   assign tb_reg_dt[9] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[9] ;
+   assign tb_reg_dt[31] = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.\reg_dt[31] ;
+   `else
    assign tb_reg_dt = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.reg_dt;
+   `endif
    assign reg_clk = dut.uu_core.uu_dtpath.uu_dec.uu_reg_file.clk;
-   assign inst_error_flag = dut.uu_core.uu_dtpath.uu_dec.err_flag_ff;
 
    /* TASKS */
    task automatic print_progress(time current, time total);
@@ -552,9 +563,14 @@ module tb_ariscv_soc_top;
 
    /* TEST SEQUENCE */
    initial begin
+
+      `ifdef GATE_LEVEL
+         $sdf_annotate("../timing/ariscv_routed.sdf", dut.uu_core, , "../logs/xcelium/sdf.log", "MAXIMUM");
+      `endif
+
       `ifndef BENCHMARK_TEST
-      $dumpfile("wave_trace.vcd");
-      // $dumpvars(0, tb_ariscv);
+         $dumpfile("wave_trace.vcd");
+         $dumpvars(0, tb_ariscv_soc_top);
       `endif
 
       /* INITIALIZING */

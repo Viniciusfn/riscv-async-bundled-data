@@ -1,7 +1,7 @@
 # PARAMTERS ##############################
 # DEFINES_RTL := -DSYNC_RISCV
 # DEFINES_RTL := -DPROTO_LC -DTOKENS_1
-DEFINES_RTL := -DPROTO_LC -DTOKENS_2
+# DEFINES_RTL := -DPROTO_LC -DTOKENS_2
 TB_NAME     := tb_ariscv_soc_top
 ##########################################
 
@@ -58,10 +58,18 @@ lec:
 innovus:
 	innovus -files ../scripts/innovus/setup.tcl -no_gui
 
-generate-vcd:
+generate-vcd-rtl:
 	xrun -sv -access +rwc -timescale 1ns/100ps \
 		-input ../scripts/xcelium/dump_vcd.tcl \
 		-f ../srclists/rtl.lst -f ../srclists/tb.lst \
+		-top $(TB_NAME) \
+		-l ../logs/xcelium/xrun.log
+
+generate-vcd:
+	xrun -sv -access +rwc -timescale 1ns/1ps \
+	  	-define GATE_LEVEL \
+		-input ../scripts/xcelium/dump_vcd.tcl \
+		-f ../srclists/cell.lst -f ../srclists/tb.lst \
 		-top $(TB_NAME) \
 		-l ../logs/xcelium/xrun.log
 

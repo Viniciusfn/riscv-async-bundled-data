@@ -2,7 +2,7 @@
 *	Innovus 22.14-s061_1 (64bit) 10/18/2023 11:21 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-Jul-08 21:14:01 (2026-Jul-09 00:14:01 GMT)
+* 	Date & Time:	2026-Jul-09 09:33:20 (2026-Jul-09 12:33:20 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -70,24 +70,24 @@ Clock                           Internal   Switching     Leakage       Total  Pe
 EPC_J1_req0                      0.02569     0.01347   1.265e-06     0.03916      0.5426 
 EPC_J2_req0                      0.01894    0.009411   1.183e-06     0.02835      0.3929 
 ACLK_DE_2                         0.2729      0.2413   1.151e-05      0.5142       7.125 
+LAUNCH_PC_DE                      0.2729      0.2413   1.151e-05      0.5142       7.125 
 CAPTURE_REG_DE                    0.2729      0.2413   1.151e-05      0.5142       7.125 
 CAPTURE_FD_DE                     0.2729      0.2413   1.151e-05      0.5142       7.125 
-LAUNCH_PC_DE                      0.2729      0.2413   1.151e-05      0.5142       7.125 
+EPC_LOOP2_ack                    0.06588     0.03152   3.188e-06     0.09741        1.35 
+EPC_J2_req1                      0.01894    0.009411   1.183e-06     0.02835      0.3929 
+CAPTURE_MW_REG                    0.3658      0.4367   2.115e-05      0.8025       11.12 
 EPC_F2_ack0                      0.02267      0.0121   1.227e-06     0.03477      0.4818 
 EPC_F1_ack1                       0.0253     0.01275    1.25e-06     0.03805      0.5272 
 ACLK_PC_0                         0.1237     0.09254   5.676e-06      0.2162       2.996 
 ACLK_MW_4                        0.09732      0.1042   5.556e-06      0.2016       2.793 
-EPC_LOOP2_req                    0.06588     0.03152   3.188e-06     0.09741        1.35 
-LAUNCH_EM_DE                      0.2729      0.2413   1.151e-05      0.5142       7.125 
-LAUNCH_MW_EM                     0.07779     0.07816   5.743e-06       0.156       2.161 
-LAUNCH_FD_PC                      0.1237     0.09254   5.676e-06      0.2162       2.996 
 EPC_F1_ack0                       0.0253     0.01275    1.25e-06     0.03805      0.5272 
 LAUNCH_DE_FD                      0.1537      0.1482   6.779e-06      0.3019       4.184 
 CAPTURE_EM_MW                    0.09732      0.1042   5.556e-06      0.2016       2.793 
 ACLK_FD_1                         0.1537      0.1482   6.779e-06      0.3019       4.184 
-EPC_LOOP2_ack                    0.06588     0.03152   3.188e-06     0.09741        1.35 
-EPC_J2_req1                      0.01894    0.009411   1.183e-06     0.02835      0.3929 
-CAPTURE_MW_REG                    0.3658      0.4367   2.115e-05      0.8025       11.12 
+EPC_LOOP2_req                    0.06588     0.03152   3.188e-06     0.09741        1.35 
+LAUNCH_EM_DE                      0.2729      0.2413   1.151e-05      0.5142       7.125 
+LAUNCH_MW_EM                     0.07779     0.07816   5.743e-06       0.156       2.161 
+LAUNCH_FD_PC                      0.1237     0.09254   5.676e-06      0.2162       2.996 
 CAPTURE_PC_FD                     0.1537      0.1482   6.779e-06      0.3019       4.184 
 LAUNCH_REG_MW                    0.09732      0.1042   5.556e-06      0.2016       2.793 
 DUMMY_LOOP2                      0.06588     0.03152   3.188e-06     0.09741        1.35 
@@ -104,14 +104,24 @@ CAPTURE_DE_EM                    0.07779     0.07816   5.743e-06       0.156    
 -----------------------------------------------------------------------------------------
 Total (excluding duplicates)       1.135       1.157   5.796e-05       2.292       31.75 
 -----------------------------------------------------------------------------------------
+Clock: LAUNCH_PC_DE
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
 Clock: CAPTURE_REG_DE
 Clock Period: 0.001900 usec 
 Clock Toggle Rate:  1052.6316 Mhz 
 Clock Static Probability:  0.5000
 
-Clock: LAUNCH_PC_DE
+Clock: EPC_LOOP2_ack
 Clock Period: 0.001400 usec 
 Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_J2_req1
+Clock Period: 0.001900 usec 
+Clock Toggle Rate:  1052.6316 Mhz 
 Clock Static Probability:  0.5000
 
 Clock: EPC_F2_ack0
@@ -132,16 +142,6 @@ Clock Static Probability:  0.5000
 Clock: EPC_LOOP2_req
 Clock Period: 0.001400 usec 
 Clock Toggle Rate:  1428.5714 Mhz 
-Clock Static Probability:  0.5000
-
-Clock: EPC_LOOP2_ack
-Clock Period: 0.001400 usec 
-Clock Toggle Rate:  1428.5714 Mhz 
-Clock Static Probability:  0.5000
-
-Clock: EPC_J2_req1
-Clock Period: 0.001900 usec 
-Clock Toggle Rate:  1052.6316 Mhz 
 Clock Static Probability:  0.5000
 
 Clock: CAPTURE_PC_FD

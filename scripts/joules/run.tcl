@@ -21,15 +21,8 @@ set_db init_hdl_search_path {../rtl/src}
 # ----------------------------------------
 
 read_netlist ../structural/innovus/ariscv_routed.v
-read_sdf ../timing/ariscv_routed.sdf 
-# read_spef ../structural/innovus/ariscv.spef
-
-# Constraints
-source ../scripts/genus/clocks.tcl
-source ../scripts/genus/io_delays.tcl
-source ../scripts/genus/timing_exceptions.tcl
-
-check_design -unresolved > ../reports/joules/unresolved_modules.rpt
+# read_sdf ../timing/ariscv_routed.sdf 
+read_spef ../structural/innovus/ariscv.spef
 
 # ----------------------------------------
 # POWER SETUP
@@ -42,7 +35,7 @@ check_design -unresolved > ../reports/joules/unresolved_modules.rpt
 # ----------------------------------------
 
 # Read VCD
-read_stimulus -format vcd ../timing/testbench.vcd \
+read_stimulus -format vcd wave_trace.vcd \
                 -dut_instance tb_ariscv_soc_top.dut.uu_core
 
 compute_power

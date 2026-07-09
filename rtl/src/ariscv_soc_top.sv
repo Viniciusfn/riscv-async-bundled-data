@@ -31,7 +31,9 @@ module ariscv_soc_top #(
 
    // ARISCV CORE
    ariscv #(
+      `ifndef GATE_LEVEL
       .ARISCV_PARAMS    (ARISCV_PARAMS)
+      `endif
    ) uu_core (
       `ifdef SYNC_RISCV
       .clk              (clk),

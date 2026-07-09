@@ -1,3 +1,4 @@
+../rtl/src/ariscv_params_pkg.sv
 ../rtl/src/ariscv_soc_top.sv
 ../model/dt_mem_model.sv
 ../model/inst_mem_model.sv

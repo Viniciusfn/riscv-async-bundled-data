@@ -53,3 +53,4 @@ db/*
 *.metrics
 
 *.sdf
+*.spef
