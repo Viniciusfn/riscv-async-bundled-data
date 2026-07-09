@@ -29,7 +29,7 @@ if { ${FAST_CORNER} == 1 } {
     set DELAY_DE_PC 4.400
     set DELAY_EM_MW [expr ${MEM_IO_PERIOD}]
     set DELAY_MW_REG 1.600
-    set DELAY_REG_DE 1.500
+    set DELAY_REG_DE 1.900
     set PERIOD_PC_PC 1.400
     set PERIOD_DE_DE 4.200
 }

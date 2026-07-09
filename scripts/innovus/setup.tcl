@@ -21,7 +21,8 @@ set LEF_LIST {/Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/gsclib045/lef/gsclib0
 
 set LIB_PATH {/Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/ }
 
-set LIB_LIST {/Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/gsclib045/timing/slow_vdd1v0_basicCells.lib}
+set LIB_LIST {/Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/gsclib045/timing/slow_vdd1v0_basicCells.lib \
+              /Tools/pdks/gpdk045_v_6_0/gsclib045_all_v4_4/gsclib045/timing/fast_vdd1v0_basicCells.lib}
 
 # Other Definitions -----------------------------
 setMultiCpuUsage -localCpu 4

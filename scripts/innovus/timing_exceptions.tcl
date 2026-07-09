@@ -14,7 +14,7 @@ if { ${SYNC_VERSION} == 0 } {
 
     # Settting 0-cycle path from all clocks to all clocks
     set_multicycle_path 0  -setup -from [get_clocks {ACLK_*}] -to [get_clocks {CAPTURE_*}]
-    set_multicycle_path -1 -hold  -from [get_clocks {LAUNCH_*}] -to [get_clocks {ACLK_*}]
+    set_multicycle_path 0  -hold  -from [get_clocks {LAUNCH_*}] -to [get_clocks {ACLK_*}]
 
     # Setting false path to/from all dummy/epc clocks
     set_false_path -from [get_clocks {DUMMY_LOOP* EPC_*}]
@@ -31,10 +31,13 @@ if { ${SYNC_VERSION} == 0 } {
     set_clock_latency -source $DELAY_EM_MW [get_clocks CAPTURE_EM_MW]
     set_clock_latency -source $DELAY_MW_REG [get_clocks CAPTURE_MW_REG]
     set_clock_latency -source $DELAY_REG_DE [get_clocks CAPTURE_REG_DE]
+
     set_propagated_clock [get_clocks {CAPTURE_* EPC_* LAUNCH_*}]
 
+    set_min_delay 0.400 -from [get_clocks {CAPTURE_EM_MW}] -to [get_ports {o_mem_clk}] -ignore_clock_latency
+
     # Hold constraints
-    set_min_delay -from [get_clocks LAUNCH*] 0.100
+    set_clock_latency -source 0.250 [get_clocks LAUNCH_*]
 
     #Disabling timing in muller gates to avoid combinational loop breaking
     set_disable_timing [get_pins uu_ctrlpath/*/uu_c_element*/*DRV_DONT_TOUCH/Y]

@@ -17,7 +17,7 @@ if { ${SYNC_VERSION} == 0 } {
 
     set_input_delay  -max ${IN_IO_MAX_DELAY}  -clock [get_clocks {ACLK_EM_3}] [get_ports {i_readData}]
     set_input_delay  -min 0.050               -clock [get_clocks {ACLK_EM_3}] [get_ports {i_readData}]
-    set_output_delay -max ${OUT_IO_MAX_DELAY} -clock [get_clocks {CAPTURE_EM_MW}] -reference_pin [get_ports o_mem_clk] [get_ports {o_writeData o_writeAddr o_memWrite o_writeWidth}]
+    set_output_delay -max 0.100               -clock [get_clocks {CAPTURE_EM_MW}] -reference_pin [get_ports o_mem_clk] [get_ports {o_writeData o_writeAddr o_memWrite o_writeWidth}]
     set_output_delay -min 0.050               -clock [get_clocks {CAPTURE_EM_MW}] -reference_pin [get_ports o_mem_clk] [get_ports {o_writeData o_writeAddr o_memWrite o_writeWidth}]
 
 } else {

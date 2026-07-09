@@ -14,7 +14,7 @@ foreach inst $dt_insts {
 
 floorPlan \
     -site CoreSite \
-    -su 1.0 0.60 20 20 20 20
+    -su 1.0 0.60 5 5 5 5
 
 assignIoPins -autoBusGroup
 
@@ -43,7 +43,7 @@ routeDesign
 # Post-Route
 #########################################################
 
-optDesign -postRoute ;# Requires OCV enabled
+route_opt_design ;# Requires OCV enabled
 
 #########################################################
 # Reports
@@ -51,7 +51,8 @@ optDesign -postRoute ;# Requires OCV enabled
 
 report_area -out_file "$REPORT_PATH/area.rpt"
 report_power -hierarchy all -outfile "$REPORT_PATH/power.rpt"
-report_timing -max_paths 20 -path_type full_clock > $REPORT_PATH/timing.rpt
+report_timing -max_paths 50 -path_type full_clock -view "setup" -late -retime path_slew_propagation -analysis_summary_file "${REPORT_PATH}/timing_summary_setup.rpt" > $REPORT_PATH/timing_setup.rpt
+report_timing -max_paths 50 -path_type full_clock -view "hold"  -early  -retime path_slew_propagation -analysis_summary_file "${REPORT_PATH}/timing_summary_hold.rpt"  > $REPORT_PATH/timing_hold.rpt
 report_constraint -all_violators > $REPORT_PATH/all_viol.rpt
 report_clocks > $REPORT_PATH/clocks.rpt
 report_clocks -source_insertion -delay_adjustment_table > $REPORT_PATH/clocks_delay_adjustment.rpt
