@@ -16,7 +16,60 @@ floorPlan \
     -site CoreSite \
     -su 1.0 0.60 5 5 5 5
 
-assignIoPins -autoBusGroup
+createPinGroup INST_IF \
+    -pin {i_inst[*] o_pc[*]} \
+    -optimizeOrder
+
+createPinGroup DATA_OUT_IF \
+    -pin {
+        o_writeData[*]
+        o_writeAddr[*]
+        o_memWrite
+        o_writeWidth[*]
+        o_mem_clk
+    } \
+    -optimizeOrder
+
+createPinGroup DATA_IN_IF \
+    -pin {i_readData[*]} \
+    -optimizeOrder
+
+createPinGroup CLK_RST \
+    -pin {clk rst_async_n} \
+    -optimizeOrder
+
+assignIoPins \
+    -align \
+    -autoBusGroup
+
+setPinAssignMode -pinEditInBatch true
+
+editPin \
+    -pin {i_inst[*] o_pc[*]} \
+    -side TOP \
+    -spreadType SIDE \
+    -layer 2
+
+editPin \
+    -pin {
+        i_readData[*]
+        o_writeData[*]
+        o_writeAddr[*]
+        o_memWrite
+        o_writeWidth[*]
+        o_mem_clk
+    } \
+    -side RIGHT \
+    -spreadType SIDE \
+    -layer 2
+
+editPin \
+    -pin {clk rst_async_n} \
+    -side LEFT \
+    -spreadType SIDE \
+    -layer 2
+
+setPinAssignMode -pinEditInBatch false
 
 globalNetConnect VDD -type pgpin -pin VDD -all
 globalNetConnect VSS -type pgpin -pin VSS -all

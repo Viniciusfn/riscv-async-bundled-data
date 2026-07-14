@@ -68,6 +68,7 @@ generate-vcd-rtl:
 generate-vcd:
 	xrun -sv -access +rwc -timescale 1ns/1ps \
 	  	-define GATE_LEVEL \
+	   	-define SYNC_RISCV \
 		-input ../scripts/xcelium/dump_vcd.tcl \
 		-f ../srclists/cell.lst -f ../srclists/tb.lst \
 		-top $(TB_NAME) \
@@ -77,4 +78,4 @@ joules:
 	joules -batch -files ../scripts/joules/run.tcl -work ../logs/joules
 
 clean:
-	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob xcelium.d joules_work *.rpt *.old *.history ../logs/joules/*
+	rm -rf obj_dir *.vcd *.log* *.cmd* $(WAVE_FILE) fv *fv_map*db timingReports *.do *.ob xcelium.d joules_work *.rpt *.old *.history ../logs/joules/* *.key *.dump *.sdf.X *.trn *.dsn

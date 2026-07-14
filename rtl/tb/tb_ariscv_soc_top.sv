@@ -575,6 +575,7 @@ module tb_ariscv_soc_top;
 
       /* INITIALIZING */
       rst_async_n = 1'b1;
+      perf_clk    = 1'b0;
 
       /* RESET */
       #10 rst_async_n = 0;

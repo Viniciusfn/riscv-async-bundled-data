@@ -5,23 +5,23 @@ QoS Summary for ariscv
 ================================================================================
 Metric                          generic         mapped          placed         
 ================================================================================
-Slack (ps):                      -121             -15               0
-  R2R (ps):                      -121             -15               0
-  I2R (ps):                        31              55              55
-  R2O (ps):                       480             291             170
+Slack (ps):                       226               8               0
+  R2R (ps):                       226               8               0
+  I2R (ps):                     3,160           3,155           3,150
+  R2O (ps):                     3,044           3,068           3,062
   I2O (ps):                  no_value        no_value        no_value
   CG  (ps):                  no_value        no_value        no_value
-TNS (ps):                      -2,436            -220               0
-  R2R (ps):                    -2,436            -220               0
+TNS (ps):                           0               0               0
+  R2R (ps):                         0               0               0
   I2R (ps):                         0               0               0
   R2O (ps):                         0               0               0
   I2O (ps):                  no_value        no_value        no_value
   CG  (ps):                  no_value        no_value        no_value
-Failing Paths:                     27              17               0
-Cell Area:                        142           5,277           5,124
-Total Cell Area:                  142           5,277           5,124
-Leaf Instances:                11,514           5,406           5,135
-Total Instances:               11,514           5,406           5,135
+Failing Paths:                      0               0               0
+Cell Area:                     11,506           6,846           6,433
+Total Cell Area:               11,506           6,846           6,433
+Leaf Instances:                12,618           7,033           6,456
+Total Instances:               12,618           7,033           6,456
 Utilization (%):                 0.00            0.00            0.00
 Tot. Net Length (um):        no_value        no_value        no_value
 Avg. Net Length (um):        no_value        no_value        no_value
@@ -32,17 +32,17 @@ Norm Cong Hotspot Area:
   Max Cong:                  no_value        no_value        no_value
   Tot Cong:                  no_value        no_value        no_value
 ================================================================================
-CPU  Runtime (h:m:s):        00:00:57        00:01:45        00:00:36
-Real Runtime (h:m:s):        00:00:45        00:00:57        00:00:34
-CPU  Elapsed (h:m:s):        00:01:05        00:02:50        00:03:25
-Real Elapsed (h:m:s):        00:00:49        00:01:46        00:02:20
-Memory (MB):                  1566.09         1568.48         1570.30
+CPU  Runtime (h:m:s):        00:00:54        00:01:36        00:00:42
+Real Runtime (h:m:s):        00:00:44        00:00:53        00:00:40
+CPU  Elapsed (h:m:s):        00:01:02        00:02:38        00:03:20
+Real Elapsed (h:m:s):        00:00:47        00:01:41        00:02:20
+Memory (MB):                  1557.00         1562.68         1563.50
 ================================================================================
 ================================================================================
 Flow Settings:
 ================================================================================
 Total Runtime (h:m:s): 00:02:17
-Total Memory (MB):     1578.30
+Total Memory (MB):     1571.50
 Executable Version:    22.14-s059_1
 ================================================================================
 Total Cell Area =  Cell Area + Physical Cell Area
