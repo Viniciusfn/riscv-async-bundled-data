@@ -24,6 +24,11 @@ read_netlist ../structural/innovus/ariscv_routed.v
 # read_sdf ../timing/ariscv_routed.sdf 
 read_spef ../structural/innovus/ariscv.spef
 
+# Constraints
+source ../scripts/genus/clocks.tcl
+source ../scripts/genus/io_delays.tcl
+source ../scripts/genus/timing_exceptions.tcl
+
 # ----------------------------------------
 # POWER SETUP
 # ----------------------------------------
