@@ -42,8 +42,8 @@ package ariscv_params_pkg;
       DELAY_DE_EM    : 31,
       DELAY_DE_PC    : 43,
       DELAY_EM_MW    : 9,
-      DELAY_MW_REG   : 18,
-      DELAY_REG_DE   : 14,
+      DELAY_MW_REG   : 15,
+      DELAY_REG_DE   : 19,
          `ifdef PROTO_LC
          DELAY_LOOP     : 13,
          DELAY_LOOP_2   : 41,

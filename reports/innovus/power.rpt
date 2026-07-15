@@ -2,7 +2,7 @@
 *	Innovus 22.14-s061_1 (64bit) 10/18/2023 11:21 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-Jul-13 19:30:42 (2026-Jul-13 22:30:42 GMT)
+* 	Date & Time:	2026-Jul-14 22:08:43 (2026-Jul-15 01:08:43 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -43,37 +43,191 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        1.89199924 	   68.7222%
-Total Switching Power:       0.86043758 	   31.2533%
-Total Leakage Power:         0.00067665 	    0.0246%
-Total Power:                 2.75311347 
+Total Internal Power:        4.92837945 	   68.3362%
+Total Switching Power:       2.28299582 	   31.6557%
+Total Leakage Power:         0.00058913 	    0.0082%
+Total Power:                 7.21196440 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                         1.281     0.08152   0.0002506       1.362       49.49 
+Sequential                         3.132      0.2246   0.0002642       3.357       46.55 
 Macro                                  0           0           0           0           0 
 IO                                     0           0           0           0           0 
-Combinational                     0.3726      0.4916   0.0003942      0.8646       31.41 
-Clock (Combinational)             0.2387      0.2873   3.188e-05       0.526       19.11 
+Combinational                     0.8202       1.083   0.0002684       1.903       26.39 
+Clock (Combinational)             0.9757      0.9757   5.654e-05       1.951       27.06 
 Clock (Sequential)                     0           0           0           0           0 
 -----------------------------------------------------------------------------------------
-Total                              1.892      0.8604   0.0006767       2.753         100 
+Total                              4.928       2.283   0.0005891       7.212         100 
 -----------------------------------------------------------------------------------------
 
 
 Clock                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-clk                               0.2387      0.2873   3.188e-05       0.526       19.11 
+EPC_J2_req0                      0.02619     0.01048   1.782e-06     0.03667      0.5085 
+EPC_LOOP2_ack                    0.02202     0.00754   1.772e-06     0.02957      0.4099 
+EPC_LOOP2_req                    0.02202     0.00754   1.772e-06     0.02957      0.4099 
+DUMMY_LOOP1                      0.02725     0.01274   1.787e-06        0.04      0.5546 
+EPC_LOOP1_ack                    0.02725     0.01274   1.787e-06        0.04      0.5546 
+ACLK_DE_2                         0.2733      0.2456   1.262e-05      0.5189       7.194 
+LAUNCH_PC_DE                      0.2733      0.2456   1.262e-05      0.5189       7.194 
+CAPTURE_FD_DE                     0.2733      0.2456   1.262e-05      0.5189       7.194 
+EPC_LOOP1_req                    0.02725     0.01274   1.787e-06        0.04      0.5546 
+ACLK_EM_3                        0.04482     0.04476   5.114e-06     0.08958       1.242 
+CAPTURE_REG_DE                    0.2733      0.2456   1.262e-05      0.5189       7.194 
+EPC_JL_req0_a                    0.01656    0.006239   1.154e-06      0.0228      0.3162 
+EPC_JL_req0_b                    0.01656    0.006239   1.154e-06      0.0228      0.3162 
+EPC_F1_ack1                       0.0181    0.007326   1.139e-06     0.02542      0.3525 
+LAUNCH_EM_DE                      0.2733      0.2456   1.262e-05      0.5189       7.194 
+LAUNCH_MW_EM                     0.04482     0.04476   5.114e-06     0.08958       1.242 
+LAUNCH_FD_PC                     0.08576     0.06673   4.844e-06      0.1525       2.114 
+CAPTURE_DE_PC                    0.08576     0.06673   4.844e-06      0.1525       2.114 
+ACLK_FD_1                        0.08886     0.08079   4.541e-06      0.1697       2.352 
+CAPTURE_EM_MW                     0.0862      0.0946   5.346e-06      0.1808       2.507 
+DUMMY_LOOP2                      0.02202     0.00754   1.772e-06     0.02957      0.4099 
+LAUNCH_REG_MW                     0.0862      0.0946   5.346e-06      0.1808       2.507 
+CAPTURE_PC_FD                    0.08886     0.08079   4.541e-06      0.1697       2.352 
+ACLK_PC_0                        0.08576     0.06673   4.844e-06      0.1525       2.114 
+ACLK_MW_4                         0.0862      0.0946   5.346e-06      0.1808       2.507 
+EPC_JL_req1                      0.01656    0.006239   1.154e-06      0.0228      0.3162 
+EPC_J1_req0                      0.02344    0.009604   1.163e-06     0.03304      0.4582 
+EPC_FL_ack0_b                    0.02143    0.009243   1.178e-06     0.03067      0.4253 
+EPC_FL_ack0_a                    0.02143    0.009243   1.178e-06     0.03067      0.4253 
+EPC_J1_req1                      0.02344    0.009604   1.163e-06     0.03304      0.4582 
+ACLK_REG_5                        0.3425      0.4037     2.1e-05      0.7462       10.35 
+EPC_F2_ack0                       0.0302      0.0137   1.791e-06      0.0439      0.6087 
+EPC_FL_ack1                      0.02143    0.009243   1.178e-06     0.03067      0.4253 
+LAUNCH_DE_FD                     0.08886     0.08079   4.541e-06      0.1697       2.352 
+EPC_F1_ack0                       0.0181    0.007326   1.139e-06     0.02542      0.3525 
+EPC_J2_req1                      0.02619     0.01048   1.782e-06     0.03667      0.5085 
+CAPTURE_MW_REG                    0.3425      0.4037     2.1e-05      0.7462       10.35 
+LAUNCH_DE_REG                     0.3425      0.4037     2.1e-05      0.7462       10.35 
+EPC_F2_ack1                       0.0302      0.0137   1.791e-06      0.0439      0.6087 
+CAPTURE_DE_EM                    0.04482     0.04476   5.114e-06     0.08958       1.242 
 -----------------------------------------------------------------------------------------
-Total (excluding duplicates)      0.2387      0.2873   3.188e-05       0.526       19.11 
+Total (excluding duplicates)      0.9757      0.9757   5.654e-05       1.951       27.06 
 -----------------------------------------------------------------------------------------
-Clock: clk
-Clock Period: 0.004400 usec 
-Clock Toggle Rate:   454.5454 Mhz 
+Clock: EPC_LOOP2_ack
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_LOOP2_req
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_LOOP1_ack
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: ACLK_DE_2
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: LAUNCH_PC_DE
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_LOOP1_req
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: CAPTURE_REG_DE
+Clock Period: 0.002000 usec 
+Clock Toggle Rate:  1000.0000 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_JL_req0_b
+Clock Period: 0.002000 usec 
+Clock Toggle Rate:  1000.0000 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_F1_ack1
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: CAPTURE_DE_PC
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: LAUNCH_REG_MW
+Clock Period: 0.002000 usec 
+Clock Toggle Rate:  1000.0000 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: CAPTURE_PC_FD
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: ACLK_PC_0
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_JL_req1
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_J1_req0
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_FL_ack0_a
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_J1_req1
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: ACLK_REG_5
+Clock Period: 0.002000 usec 
+Clock Toggle Rate:  1000.0000 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_F2_ack0
+Clock Period: 0.001400 usec 
+Clock Toggle Rate:  1428.5714 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_FL_ack1
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: LAUNCH_DE_FD
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: EPC_J2_req1
+Clock Period: 0.002000 usec 
+Clock Toggle Rate:  1000.0000 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: LAUNCH_DE_REG
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
+Clock Static Probability:  0.5000
+
+Clock: CAPTURE_DE_EM
+Clock Period: 0.004200 usec 
+Clock Toggle Rate:   476.1905 Mhz 
 Clock Static Probability:  0.5000
 
 
@@ -81,42 +235,112 @@ Clock Static Probability:  0.5000
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-VDD                       0.9      1.892      0.8604   0.0006767       2.753         100 
+VDD                       0.9      4.928       2.283   0.0005891       7.212         100 
 
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        1.89199924 	   68.7222%
-Total Switching Power:       0.86043758 	   31.2533%
-Total Leakage Power:         0.00067665 	    0.0246%
-Total Power:                 2.75311347 
+Total Internal Power:        4.92837945 	   68.3362%
+Total Switching Power:       2.28299582 	   31.6557%
+Total Leakage Power:         0.00058913 	    0.0082%
+Total Power:                 7.21196440 
 -----------------------------------------------------------------------------------------
 
 
 Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-uu_dtpath                          1.891      0.8594   0.0006764       2.752       99.94  
-uu_dtpath/uu_dec                   1.206      0.3794   0.0003453       1.585       57.59  
-uu_dtpath/uu_exec                 0.3759      0.3018   0.0002382       0.678       24.63  
-uu_dtpath/uu_fetch                0.1244     0.03561    3.98e-05        0.16       5.813  
-uu_dtpath/uu_mem                  0.0987     0.01002    1.88e-05      0.1087        3.95  
-uu_dtpath/uu_wb                 0.008095     0.01196   9.337e-06     0.02006      0.7287  
+uu_dtpath                          4.406        1.96   0.0005505       6.367       88.29  
+uu_ctrlpath                       0.4974      0.2805   3.346e-05      0.7779       10.79  
+uu_dtpath/uu_dec                   2.846      0.9698   0.0003348       3.816       52.91  
+uu_dtpath/uu_exec                 0.5972       0.548   0.0001249       1.145       15.88  
+uu_dtpath/uu_fetch                0.3725      0.1163   3.387e-05      0.4888       6.778  
+uu_dtpath/uu_mem                  0.2606     0.08005   2.119e-05      0.3407       4.724  
+uu_ctrlpath/uu_cell_DE            0.0357     0.01554   2.274e-06     0.05124      0.7105  
+uu_ctrlpath/uu_cell_EM           0.02495     0.01129   2.516e-06     0.03624      0.5025  
+uu_ctrlpath/uu_cell_FD            0.0325     0.02017   2.724e-06     0.05268      0.7304  
+uu_ctrlpath/uu_cell_LOOP1        0.02884     0.01333   2.542e-06     0.04217      0.5848  
+uu_ctrlpath/uu_cell_LOOP2        0.02573     0.00971   2.528e-06     0.03545      0.4915  
+uu_ctrlpath/uu_cell_MW           0.01806     0.01059   2.353e-06     0.02865      0.3973  
+uu_ctrlpath/uu_cell_PC           0.03703     0.01577   2.201e-06      0.0528      0.7322  
+uu_ctrlpath/uu_cell_REG          0.02545     0.01204   2.518e-06     0.03749      0.5199  
+uu_dtpath/uu_wb                  0.02161     0.07507   9.529e-06     0.09669       1.341  
+uu_ctrlpath/uu_dly_DE_EM         0.02078     0.01125   8.073e-07     0.03203      0.4442  
+uu_ctrlpath/uu_dly_DE_PC         0.02908     0.01926    1.13e-06     0.04834      0.6703  
+uu_ctrlpath/uu_dly_EM_MW        0.001848   0.0008252   2.153e-07    0.002673     0.03707  
+uu_ctrlpath/uu_dly_FD_J2         0.01661     0.01111   6.459e-07     0.02772      0.3844  
+uu_ctrlpath/uu_dly_LOOP_2         0.0277     0.01694   1.076e-06     0.04464       0.619  
+uu_ctrlpath/uu_dly_MW_REG        0.00679    0.003319   3.768e-07     0.01011      0.1402  
+uu_ctrlpath/uu_dly_PC_FD        0.006909    0.006716   2.691e-07     0.01362      0.1889  
+uu_ctrlpath/uu_dly_PC_L1         0.01801    0.009702   6.997e-07     0.02771      0.3842  
+uu_ctrlpath/uu_dly_REG_J2       0.008731      0.0034   4.844e-07     0.01213      0.1682  
+uu_ctrlpath/uu_fork_DE_LOOP
+                                 0.01838    0.009141    1.13e-06     0.02752      0.3816  
+uu_ctrlpath/uu_fork_F1           0.01122    0.003752   9.562e-07     0.01497      0.2076  
+uu_ctrlpath/uu_fork_F2           0.01546    0.007143   1.031e-06      0.0226      0.3134  
+uu_ctrlpath/uu_join_J1            0.0208    0.009263   1.068e-06     0.03007      0.4169  
+uu_ctrlpath/uu_join_J2            0.0211     0.01201   1.298e-06     0.03311      0.4591  
+uu_ctrlpath/uu_join_LOOP_DE
+                                 0.01491    0.006535   1.122e-06     0.02144      0.2974  
 uu_dtpath/uu_dec/uu_reg_file
-                                   1.044      0.3279   0.0002957       1.372       49.84  
+                                   2.352      0.7854   0.0002963       3.137        43.5  
+uu_ctrlpath/uu_cell_DE/uu_c_element
+                                 0.01538    0.009692   1.064e-06     0.02507      0.3476  
+uu_ctrlpath/uu_cell_DE/uu_c_element_mid
+                                 0.01738    0.004272   1.052e-06     0.02165      0.3002  
+uu_ctrlpath/uu_cell_EM/uu_c_element
+                                0.008264    0.004713   1.212e-06     0.01298      0.1799  
+uu_ctrlpath/uu_cell_EM/uu_c_element_mid
+                                 0.01554    0.004587   1.242e-06     0.02013      0.2791  
+uu_ctrlpath/uu_cell_FD/uu_c_element
+                                 0.01008     0.01036   1.213e-06     0.02044      0.2835  
+uu_ctrlpath/uu_cell_FD/uu_c_element_mid
+                                 0.02115    0.008806   1.449e-06     0.02996      0.4154  
+uu_ctrlpath/uu_cell_LOOP1/uu_c_element
+                                 0.01078     0.00597   1.216e-06     0.01675      0.2322  
+uu_ctrlpath/uu_cell_LOOP1/uu_c_element_mid
+                                 0.01661    0.004542   1.252e-06     0.02116      0.2934  
+uu_ctrlpath/uu_cell_LOOP2/uu_c_element
+                                0.008073    0.003209   1.211e-06     0.01128      0.1565  
+uu_ctrlpath/uu_cell_LOOP2/uu_c_element_mid
+                                 0.01638     0.00453   1.245e-06     0.02091      0.2899  
+uu_ctrlpath/uu_cell_MW/uu_c_element
+                                0.007308    0.006627   1.065e-06     0.01394      0.1932  
+uu_ctrlpath/uu_cell_MW/uu_c_element_mid
+                                0.008965    0.002727   1.118e-06     0.01169      0.1621  
+uu_ctrlpath/uu_cell_PC/uu_c_element
+                                 0.01737     0.00927   1.064e-06     0.02664      0.3694  
+uu_ctrlpath/uu_cell_PC/uu_c_element_mid
+                                 0.01802    0.004872   1.052e-06      0.0229      0.3175  
+uu_ctrlpath/uu_cell_REG/uu_c_element
+                                0.008166    0.007123   1.211e-06     0.01529       0.212  
+uu_ctrlpath/uu_cell_REG/uu_c_element_mid
+                                 0.01613    0.004356   1.245e-06     0.02049      0.2841  
 uu_dtpath/uu_dec/uu_ctrl_unit
-                               0.0007961    0.000875   1.468e-06    0.001673     0.06075  
+                                0.003401    0.003684   1.611e-06    0.007086     0.09825  
 uu_dtpath/uu_dec/uu_extend
-                                0.002066    0.003224   2.589e-06    0.005293      0.1922  
-uu_dtpath/uu_exec/uu_alu          0.2243      0.2048   0.0001651      0.4292       15.59  
+                                 0.00803     0.01192   2.476e-06     0.01995      0.2766  
+uu_dtpath/uu_exec/uu_alu          0.3683      0.3727   8.371e-05       0.741       10.27  
+uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork
+                                 0.01838    0.009141    1.13e-06     0.02752      0.3816  
+uu_ctrlpath/uu_fork_F1/uu_c_element_fork
+                                 0.01122    0.003752   9.562e-07     0.01497      0.2076  
+uu_ctrlpath/uu_fork_F2/uu_c_element_fork
+                                 0.01546    0.007143   1.031e-06      0.0226      0.3134  
+uu_ctrlpath/uu_join_J1/uu_c_element_join
+                                  0.0208    0.009263   1.068e-06     0.03007      0.4169  
+uu_ctrlpath/uu_join_J2/uu_c_element_join
+                                  0.0211     0.01201   1.298e-06     0.03311      0.4591  
+uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join
+                                 0.01491    0.006535   1.122e-06     0.02144      0.2974  
 
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*                Highest Average Power: uu_dtpath/uu_exec/uu_alu/FE_OFC957_FE_RN_7 (CLKINVX20):         0.003134 
-*                Highest Leakage Power: uu_dtpath/uu_exec/uu_alu/FE_OFC764_alu_srcB_w_0 (CLKBUFX20):        6.198e-07 
-*          Total Cap:      3.07226e-11 F
-*          Total instances in design:  7193
+*                Highest Average Power: uu_ctrlpath/FE_OFC3_ack_F2_J1 (CLKBUFX6):          0.01549 
+*                Highest Leakage Power:       FE_PDC699_i_inst_26 (CLKBUFX20):        6.189e-07 
+*          Total Cap:      2.6215e-11 F
+*          Total instances in design:  6476
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap:     0

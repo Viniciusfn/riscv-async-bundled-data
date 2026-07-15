@@ -1,18 +1,64 @@
 Power Unit: W
 Area Unit: Um^2
 PDB Frame : /stim#1/frame#0
----------------------------------------------------------------------------------------------------------
-Cells Pct_cells     Leakage    Internal   Switching       Total Lvl Instance                             
----------------------------------------------------------------------------------------------------------
- 7193   100.00% 6.72941e-07 7.35856e-04 3.06419e-04 1.04295e-03   0 /ariscv                              
- 7189    99.94% 6.72740e-07 7.35604e-04 3.03344e-04 1.03962e-03   1 /ariscv/uu_dtpath                    
- 3412    47.44% 3.37272e-07 4.71944e-04 1.30141e-04 6.02423e-04   2 /ariscv/uu_dtpath/uu_dec             
- 2826    39.29% 2.87243e-07 3.98035e-04 1.03686e-04 5.02009e-04   3 /ariscv/uu_dtpath/uu_dec/uu_reg_file 
-   52     0.72% 2.52072e-09 1.30379e-06 2.01806e-06 3.32437e-06   3 /ariscv/uu_dtpath/uu_dec/uu_extend   
-   41     0.57% 1.56490e-09 6.89880e-07 1.03551e-06 1.72696e-06   3 /ariscv/uu_dtpath/uu_dec/uu_ctrl_unit
- 2752    38.26% 2.42804e-07 1.36946e-04 1.07606e-04 2.44795e-04   2 /ariscv/uu_dtpath/uu_exec            
- 1947    27.07% 1.71060e-07 7.62968e-05 7.20687e-05 1.48537e-04   3 /ariscv/uu_dtpath/uu_exec/uu_alu     
-  465     6.46% 3.91615e-08 4.77327e-05 1.21103e-05 5.98822e-05   2 /ariscv/uu_dtpath/uu_fetch           
-  139     1.93% 1.86165e-08 4.20674e-05 3.35146e-06 4.54375e-05   2 /ariscv/uu_dtpath/uu_mem             
-  158     2.20% 9.18271e-09 2.05175e-06 2.84910e-06 4.91003e-06   2 /ariscv/uu_dtpath/uu_wb              
----------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+Cells Pct_cells     Leakage    Internal   Switching       Total Lvl Instance                                             
+-------------------------------------------------------------------------------------------------------------------------
+ 6476   100.00% 5.83154e-07 5.89487e-04 2.35780e-04 8.25849e-04   0 /ariscv                                              
+ 6175    95.35% 5.44317e-07 5.17281e-04 1.92909e-04 7.10735e-04   1 /ariscv/uu_dtpath                                    
+ 3322    51.30% 3.27085e-07 3.41065e-04 9.39759e-05 4.35368e-04   2 /ariscv/uu_dtpath/uu_dec                             
+ 2836    43.79% 2.88006e-07 2.90744e-04 7.54196e-05 3.66452e-04   3 /ariscv/uu_dtpath/uu_dec/uu_reg_file                 
+   50     0.77% 2.43106e-09 1.01308e-06 1.60085e-06 2.61636e-06   3 /ariscv/uu_dtpath/uu_dec/uu_extend                   
+   49     0.76% 1.67613e-09 3.81532e-07 5.02194e-07 8.85402e-07   3 /ariscv/uu_dtpath/uu_dec/uu_ctrl_unit                
+ 1955    30.19% 1.27465e-07 7.41598e-05 5.39772e-05 1.28265e-04   2 /ariscv/uu_dtpath/uu_exec                            
+ 1419    21.91% 8.63347e-08 2.91316e-05 2.93376e-05 5.85555e-05   3 /ariscv/uu_dtpath/uu_exec/uu_alu                     
+  167     2.58% 2.11479e-08 3.70916e-05 1.13394e-05 4.84522e-05   2 /ariscv/uu_dtpath/uu_mem                             
+  350     5.40% 3.31861e-08 3.34899e-05 1.03379e-05 4.38609e-05   2 /ariscv/uu_dtpath/uu_fetch                           
+  109     1.68% 9.57867e-09 2.66424e-06 9.33780e-06 1.20116e-05   2 /ariscv/uu_dtpath/uu_wb                              
+  270     4.17% 3.37260e-08 6.91524e-05 3.71400e-05 1.06326e-04   1 /ariscv/uu_ctrlpath                                  
+   16     0.25% 2.83968e-09 5.48774e-06 2.56896e-06 8.05954e-06   2 /ariscv/uu_ctrlpath/uu_cell_FD                       
+    8     0.12% 1.48725e-09 3.09672e-06 1.12018e-06 4.21839e-06   3 /ariscv/uu_ctrlpath/uu_cell_FD/uu_c_element_mid      
+    6     0.09% 1.27032e-09 2.18491e-06 1.31747e-06 3.50364e-06   3 /ariscv/uu_ctrlpath/uu_cell_FD/uu_c_element          
+   14     0.22% 2.60644e-09 4.58928e-06 2.51791e-06 7.10980e-06   2 /ariscv/uu_ctrlpath/uu_cell_EM                       
+    6     0.09% 1.24200e-09 2.17821e-06 1.36917e-06 3.54862e-06   3 /ariscv/uu_ctrlpath/uu_cell_EM/uu_c_element          
+    6     0.09% 1.27903e-09 2.17247e-06 6.94911e-07 2.86866e-06   3 /ariscv/uu_ctrlpath/uu_cell_EM/uu_c_element_mid      
+   13     0.20% 2.32224e-09 4.87549e-06 2.20852e-06 7.08634e-06   2 /ariscv/uu_ctrlpath/uu_cell_MW                       
+    5     0.08% 1.05828e-09 2.17873e-06 1.23103e-06 3.41081e-06   3 /ariscv/uu_ctrlpath/uu_cell_MW/uu_c_element          
+    6     0.09% 1.12649e-09 2.27885e-06 7.72964e-07 3.05294e-06   3 /ariscv/uu_ctrlpath/uu_cell_MW/uu_c_element_mid      
+   12     0.19% 2.27435e-09 4.69706e-06 1.93987e-06 6.63920e-06   2 /ariscv/uu_ctrlpath/uu_cell_DE                       
+    5     0.08% 1.06616e-09 2.15803e-06 1.15031e-06 3.30941e-06   3 /ariscv/uu_ctrlpath/uu_cell_DE/uu_c_element          
+    5     0.08% 1.05496e-09 2.15584e-06 6.21653e-07 2.77855e-06   3 /ariscv/uu_ctrlpath/uu_cell_DE/uu_c_element_mid      
+   14     0.22% 2.60499e-09 4.61724e-06 1.98541e-06 6.60526e-06   2 /ariscv/uu_ctrlpath/uu_cell_LOOP1                    
+    6     0.09% 1.24394e-09 2.17579e-06 8.59899e-07 3.03693e-06   3 /ariscv/uu_ctrlpath/uu_cell_LOOP1/uu_c_element       
+    6     0.09% 1.26354e-09 2.18914e-06 6.61473e-07 2.85187e-06   3 /ariscv/uu_ctrlpath/uu_cell_LOOP1/uu_c_element_mid   
+   14     0.22% 2.61986e-09 4.60091e-06 1.97909e-06 6.58262e-06   2 /ariscv/uu_ctrlpath/uu_cell_LOOP2                    
+    6     0.09% 1.24879e-09 2.17847e-06 9.12131e-07 3.09185e-06   3 /ariscv/uu_ctrlpath/uu_cell_LOOP2/uu_c_element       
+    6     0.09% 1.27335e-09 2.17644e-06 6.59758e-07 2.83747e-06   3 /ariscv/uu_ctrlpath/uu_cell_LOOP2/uu_c_element_mid   
+   14     0.22% 2.63766e-09 4.56531e-06 1.97059e-06 6.53853e-06   2 /ariscv/uu_ctrlpath/uu_cell_REG                      
+    6     0.09% 1.27259e-09 2.18979e-06 1.25252e-06 3.44358e-06   3 /ariscv/uu_ctrlpath/uu_cell_REG/uu_c_element         
+    6     0.09% 1.28352e-09 2.17078e-06 6.28226e-07 2.80029e-06   3 /ariscv/uu_ctrlpath/uu_cell_REG/uu_c_element_mid     
+   12     0.19% 2.22091e-09 4.52846e-06 1.89523e-06 6.42591e-06   2 /ariscv/uu_ctrlpath/uu_cell_PC                       
+    5     0.08% 1.07450e-09 2.16475e-06 1.05669e-06 3.22251e-06   3 /ariscv/uu_ctrlpath/uu_cell_PC/uu_c_element          
+    5     0.08% 1.05934e-09 2.15394e-06 6.77199e-07 2.83219e-06   3 /ariscv/uu_ctrlpath/uu_cell_PC/uu_c_element_mid      
+   21     0.32% 1.12650e-09 2.87707e-06 1.89057e-06 4.76876e-06   2 /ariscv/uu_ctrlpath/uu_dly_DE_PC                     
+   20     0.31% 1.07291e-09 2.74057e-06 1.65883e-06 4.40047e-06   2 /ariscv/uu_ctrlpath/uu_dly_LOOP_2                    
+    8     0.12% 1.29968e-09 2.60425e-06 1.43826e-06 4.04381e-06   2 /ariscv/uu_ctrlpath/uu_join_J2                       
+    8     0.12% 1.29968e-09 2.60425e-06 1.43826e-06 4.04381e-06   3 /ariscv/uu_ctrlpath/uu_join_J2/uu_c_element_join     
+    7     0.11% 1.09298e-09 2.27541e-06 1.03530e-06 3.31180e-06   2 /ariscv/uu_ctrlpath/uu_fork_DE_LOOP                  
+    7     0.11% 1.09298e-09 2.27541e-06 1.03530e-06 3.31180e-06   3 /ariscv/uu_ctrlpath/uu_fork_DE_LOOP/uu_c_element_fork
+   15     0.23% 8.04834e-10 2.05588e-06 1.10056e-06 3.15725e-06   2 /ariscv/uu_ctrlpath/uu_dly_DE_EM                     
+    7     0.11% 1.07410e-09 2.19379e-06 9.39705e-07 3.13457e-06   2 /ariscv/uu_ctrlpath/uu_join_LOOP_DE                  
+    7     0.11% 1.07410e-09 2.19379e-06 9.39705e-07 3.13457e-06   3 /ariscv/uu_ctrlpath/uu_join_LOOP_DE/uu_c_element_join
+    6     0.09% 1.00558e-09 2.05510e-06 9.16181e-07 2.97229e-06   2 /ariscv/uu_ctrlpath/uu_fork_F2                       
+    6     0.09% 1.00558e-09 2.05510e-06 9.16181e-07 2.97229e-06   3 /ariscv/uu_ctrlpath/uu_fork_F2/uu_c_element_fork     
+    6     0.09% 1.00818e-09 2.06269e-06 8.89717e-07 2.95342e-06   2 /ariscv/uu_ctrlpath/uu_join_J1                       
+    6     0.09% 1.00818e-09 2.06269e-06 8.89717e-07 2.95342e-06   3 /ariscv/uu_ctrlpath/uu_join_J1/uu_c_element_join     
+   12     0.19% 6.51643e-10 1.65148e-06 1.09552e-06 2.74765e-06   2 /ariscv/uu_ctrlpath/uu_dly_FD_J2                     
+   13     0.20% 6.99753e-10 1.78996e-06 9.52243e-07 2.74290e-06   2 /ariscv/uu_ctrlpath/uu_dly_PC_L1                     
+    6     0.09% 9.35201e-10 1.93677e-06 6.17727e-07 2.55543e-06   2 /ariscv/uu_ctrlpath/uu_fork_F1                       
+    6     0.09% 9.35201e-10 1.93677e-06 6.17727e-07 2.55543e-06   3 /ariscv/uu_ctrlpath/uu_fork_F1/uu_c_element_fork     
+    9     0.14% 4.89630e-10 1.23987e-06 4.75777e-07 1.71614e-06   2 /ariscv/uu_ctrlpath/uu_dly_REG_J2                    
+    7     0.11% 3.71807e-10 9.64235e-07 4.63986e-07 1.42859e-06   2 /ariscv/uu_ctrlpath/uu_dly_MW_REG                    
+    5     0.08% 2.69192e-10 6.86797e-07 6.61728e-07 1.34879e-06   2 /ariscv/uu_ctrlpath/uu_dly_PC_FD                     
+    4     0.06% 2.07610e-10 5.51077e-07 2.40879e-07 7.92164e-07   2 /ariscv/uu_ctrlpath/uu_dly_EM_MW                     
+-------------------------------------------------------------------------------------------------------------------------

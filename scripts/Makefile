@@ -68,7 +68,7 @@ generate-vcd-rtl:
 generate-vcd:
 	xrun -sv -access +rwc -timescale 1ns/1ps \
 	  	-define GATE_LEVEL \
-	   	-define SYNC_RISCV \
+	   	-define PROTO_LC -define TOKENS_2 \
 		-input ../scripts/xcelium/dump_vcd.tcl \
 		-f ../srclists/cell.lst -f ../srclists/tb.lst \
 		-top $(TB_NAME) \

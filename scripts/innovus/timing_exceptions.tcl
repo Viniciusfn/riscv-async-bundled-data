@@ -40,8 +40,8 @@ if { ${SYNC_VERSION} == 0 } {
     set_clock_latency -source 0.250 [get_clocks LAUNCH_*]
 
     #Disabling timing in muller gates to avoid combinational loop breaking
+    if { ${PROTO_LC} == 1 } {
+        set_disable_timing [get_pins uu_ctrlpath/*/uu_c_element*/OR2_2_DONT_TOUCH/B] ; #c_element_asym specific
+    }
     set_disable_timing [get_pins uu_ctrlpath/*/uu_c_element*/*DRV_DONT_TOUCH/Y]
-    set_disable_timing [get_pins uu_ctrlpath/*/uu_c_element*/*DRV_DONT_TOUCH/Y]
-    # set_disable_timing -from B -to Y [get_cells uu_ctrlpath/*/uu_c_element*/NAND2_2*] ; #WCHB specific
-    # set_disable_timing -from B -to Y [get_cells uu_ctrlpath/*/uu_c_element*/NAND2_3*] ; #WCHB specific
 }
