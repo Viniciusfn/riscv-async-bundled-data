@@ -1,0 +1,115 @@
+# SimVision Command Script (Sat Jul 18 15:05:22 -03 2026)
+#
+# Version 23.09.s003
+#
+# You can restore this configuration with:
+#
+#      xrun -sv -access +rwc -timescale 1ns/1ps -define GATE_LEVEL -f ../srclists/cell.lst -f ../srclists/tb.lst -top tb_ariscv_soc_top -l ../logs/xcelium/xrun.log -input /home/vinicius.franca/workarea/riscv-async/scripts/xcelium/simvision_view.tcl
+#
+
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Simulator
+#
+database require simulator -hints {
+	simulator "xrun -sv -gui -access +rwc -timescale 1ns/1ps -define GATE_LEVEL -f ../srclists/cell.lst -f ../srclists/tb.lst -top tb_ariscv_soc_top -l ../logs/xcelium/xrun.log -input simvision_view.tcl"
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+261+33}] != ""} {
+    window geometry "Design Browser 1" 730x500+261+33
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope [subst  {[format {tb_ariscv_soc_top.dut.uu_core}]} ]
+browser set \
+    -showinternals 0 \
+    -signalsort name
+browser yview see [subst  {[format {tb_ariscv_soc_top.dut.uu_core}]} ]
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1280x598+0+27}] != ""} {
+    window geometry "Waveform 1" 1280x598+0+27
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 1,146,870ps
+
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.rst_async_n}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.uu_ctrlpath.o_aclk[5:0]}]}
+	} ]]
+waveform hierarchy expand $id
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.o_pc[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.i_inst[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.o_mem_clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.o_memWrite}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.o_writeAddr[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.o_writeData[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.o_writeWidth[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_ariscv_soc_top.dut.uu_core.i_readData[31:0]}]}
+	} ]]
+
+waveform xview limits 1129790ps 1170750ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+260+312
+
+#
+# Layout selection
+#
+

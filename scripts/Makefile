@@ -68,8 +68,14 @@ generate-vcd-rtl:
 generate-vcd:
 	xrun -sv -access +rwc -timescale 1ns/1ps \
 	  	-define GATE_LEVEL \
-	   	-define PROTO_LC -define TOKENS_2 \
 		-input ../scripts/xcelium/dump_vcd.tcl \
+		-f ../srclists/cell.lst -f ../srclists/tb.lst \
+		-top $(TB_NAME) \
+		-l ../logs/xcelium/xrun.log
+
+generate-vcd-gui:
+	xrun -sv -gui -access +rwc -timescale 1ns/1ps \
+	  	-define GATE_LEVEL \
 		-f ../srclists/cell.lst -f ../srclists/tb.lst \
 		-top $(TB_NAME) \
 		-l ../logs/xcelium/xrun.log

@@ -2,272 +2,275 @@
 The obsolete command still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use "report_route".
 Type 'man IMPFP-3803' for more detail.
 #num needed restored net=0
-#need_extraction net=0 (total=6838)
+#need_extraction net=0 (total=6276)
 #WARNING (NRDB-2120) Special net VSS is missing wiring shapes, will disable tie-net connections to this net.
-#WARNING (NRDB-2120) Special net VDD is missing wiring shapes, will disable tie-net connections to this net.
+#WARNING (NRDB-2120) Special net VSS is missing wiring shapes, will disable tie-net connections to this net.
 #
 # statistics:
 #Cpu time = 00:00:01
 #Elapsed time = 00:00:00
-#Increased memory = -61.09 (MB)
-#Total memory = 2836.65 (MB)
-#Peak memory = 3161.34 (MB)
+#Increased memory = -51.87 (MB)
+#Total memory = 2795.80 (MB)
+#Peak memory = 3118.66 (MB)
 #Number of warnings = 2
 #Total number of warnings = 20
 #Number of fails = 0
 #Total number of fails = 0
-#Complete  on Tue Jul 14 22:08:48 2026
+#Complete  on Fri Jul 17 09:30:32 2026
 #
 *** Statistics for net list ariscv ***
-Number of cells      = 6476
-Number of nets       = 6545
+Number of cells      = 5914
+Number of nets       = 5997
 Number of tri-nets   = 0
-Number of degen nets = 2
-Number of pins       = 26431
+Number of degen nets = 16
+Number of pins       = 24482
 Number of i/os       = 168
 
-Number of nets with    1 terms = 2 (0.0%)
-Number of nets with    2 terms = 3668 (56.0%)
-Number of nets with    3 terms = 886 (13.5%)
-Number of nets with    4 terms = 1242 (19.0%)
-Number of nets with    5 terms = 119 (1.8%)
-Number of nets with    6 terms = 45 (0.7%)
-Number of nets with    7 terms = 63 (1.0%)
-Number of nets with    8 terms = 62 (0.9%)
-Number of nets with    9 terms = 90 (1.4%)
-Number of nets with >=10 terms = 368 (5.6%)
+Number of nets with    1 terms = 16 (0.3%)
+Number of nets with    2 terms = 3225 (53.8%)
+Number of nets with    3 terms = 829 (13.8%)
+Number of nets with    4 terms = 1221 (20.4%)
+Number of nets with    5 terms = 115 (1.9%)
+Number of nets with    6 terms = 74 (1.2%)
+Number of nets with    7 terms = 56 (0.9%)
+Number of nets with    8 terms = 48 (0.8%)
+Number of nets with    9 terms = 45 (0.8%)
+Number of nets with >=10 terms = 368 (6.1%)
 
-*** 156 Primitives used:
-Primitive XNOR3XL (1 insts)
-Primitive XNOR2X2 (4 insts)
-Primitive XNOR2X1 (62 insts)
-Primitive SDFFRHQX1 (994 insts)
-Primitive OR4X1 (4 insts)
-Primitive OR3X4 (1 insts)
-Primitive OR3X2 (2 insts)
-Primitive OR3X1 (67 insts)
-Primitive OR2X8 (15 insts)
-Primitive OR2X6 (58 insts)
-Primitive OR2X4 (10 insts)
-Primitive OR2X2 (14 insts)
-Primitive OR2X1 (102 insts)
-Primitive OAI32X2 (1 insts)
-Primitive OAI32X1 (1 insts)
+*** 155 Primitives used:
+Primitive XNOR3X1 (1 insts)
+Primitive XNOR2X1 (67 insts)
+Primitive SDFFRX2 (1 insts)
+Primitive SDFFRHQX4 (26 insts)
+Primitive SDFFRHQX2 (2 insts)
+Primitive SDFFRHQX1 (995 insts)
+Primitive OR4X6 (1 insts)
+Primitive OR4X1 (8 insts)
+Primitive OR3XL (4 insts)
+Primitive OR3X8 (2 insts)
+Primitive OR3X6 (5 insts)
+Primitive OR3X4 (24 insts)
+Primitive OR3X2 (6 insts)
+Primitive OR3X1 (38 insts)
+Primitive OR2XL (1 insts)
+Primitive OR2X8 (9 insts)
+Primitive OR2X6 (13 insts)
+Primitive OR2X4 (21 insts)
+Primitive OR2X2 (19 insts)
+Primitive OR2X1 (57 insts)
+Primitive OAI32X4 (1 insts)
+Primitive OAI32X1 (2 insts)
 Primitive OAI31X2 (1 insts)
-Primitive OAI31X1 (11 insts)
-Primitive OAI2BB2XL (1 insts)
-Primitive OAI2BB2X2 (4 insts)
-Primitive OAI2BB2X1 (8 insts)
-Primitive OAI2BB1X4 (18 insts)
-Primitive OAI2BB1X2 (33 insts)
-Primitive OAI2BB1X1 (71 insts)
-Primitive OAI22X4 (1 insts)
-Primitive OAI22X2 (9 insts)
-Primitive OAI22X1 (20 insts)
-Primitive OAI222X4 (2 insts)
-Primitive OAI222X2 (1 insts)
-Primitive OAI222X1 (1 insts)
-Primitive OAI221X4 (1 insts)
-Primitive OAI221X2 (4 insts)
-Primitive OAI221X1 (2 insts)
-Primitive OAI21X4 (10 insts)
-Primitive OAI21X2 (27 insts)
-Primitive OAI21X1 (96 insts)
-Primitive OAI211X4 (1 insts)
-Primitive OAI211X2 (2 insts)
-Primitive OAI211X1 (2 insts)
-Primitive OA22X4 (3 insts)
-Primitive OA22X2 (2 insts)
-Primitive OA22X1 (33 insts)
-Primitive OA21X1 (45 insts)
-Primitive NOR4BX1 (1 insts)
-Primitive NOR3X6 (2 insts)
-Primitive NOR3X4 (4 insts)
+Primitive OAI31X1 (10 insts)
+Primitive OAI2BB2X4 (12 insts)
+Primitive OAI2BB2X2 (1 insts)
+Primitive OAI2BB1X2 (22 insts)
+Primitive OAI2BB1X1 (94 insts)
+Primitive OAI22XL (1 insts)
+Primitive OAI22X4 (3 insts)
+Primitive OAI22X2 (15 insts)
+Primitive OAI22X1 (5 insts)
+Primitive OAI222X4 (1 insts)
+Primitive OAI222X2 (2 insts)
+Primitive OAI222X1 (6 insts)
+Primitive OAI221X2 (6 insts)
+Primitive OAI221X1 (5 insts)
+Primitive OAI21X2 (18 insts)
+Primitive OAI21X1 (83 insts)
+Primitive OAI211X1 (1 insts)
+Primitive OA22X4 (1 insts)
+Primitive OA22X1 (49 insts)
+Primitive OA21X1 (43 insts)
+Primitive NOR4X2 (2 insts)
+Primitive NOR3X8 (1 insts)
+Primitive NOR3X6 (1 insts)
+Primitive NOR3X4 (1 insts)
 Primitive NOR3X2 (1 insts)
-Primitive NOR3X1 (3 insts)
-Primitive NOR3BX2 (1 insts)
-Primitive NOR3BX1 (36 insts)
+Primitive NOR3X1 (7 insts)
+Primitive NOR3BX4 (1 insts)
+Primitive NOR3BX1 (6 insts)
 Primitive NOR2XL (1 insts)
-Primitive NOR2X8 (2 insts)
 Primitive NOR2X6 (4 insts)
-Primitive NOR2X4 (11 insts)
-Primitive NOR2X2 (31 insts)
-Primitive NOR2X1 (128 insts)
-Primitive NOR2BX4 (5 insts)
-Primitive NOR2BX2 (23 insts)
-Primitive NOR2BX1 (257 insts)
-Primitive NAND4XL (19 insts)
-Primitive NAND4X2 (2 insts)
-Primitive NAND4X1 (12 insts)
-Primitive NAND3X4 (6 insts)
-Primitive NAND3X2 (19 insts)
-Primitive NAND3X1 (51 insts)
-Primitive NAND3BXL (4 insts)
-Primitive NAND3BX2 (3 insts)
-Primitive NAND3BX1 (3 insts)
-Primitive NAND2X8 (2 insts)
-Primitive NAND2X6 (30 insts)
-Primitive NAND2X4 (19 insts)
-Primitive NAND2X2 (18 insts)
-Primitive NAND2X1 (186 insts)
-Primitive NAND2BX4 (1 insts)
-Primitive NAND2BX2 (7 insts)
-Primitive NAND2BX1 (77 insts)
-Primitive MXI2XL (6 insts)
-Primitive MXI2X2 (4 insts)
-Primitive MXI2X1 (17 insts)
-Primitive MX2X1 (221 insts)
-Primitive INVXL (15 insts)
-Primitive INVX8 (26 insts)
-Primitive INVX4 (3 insts)
-Primitive INVX3 (12 insts)
-Primitive INVX2 (23 insts)
-Primitive INVX1 (186 insts)
-Primitive DFFRX1 (2 insts)
+Primitive NOR2X4 (4 insts)
+Primitive NOR2X2 (16 insts)
+Primitive NOR2X1 (133 insts)
+Primitive NOR2BX4 (2 insts)
+Primitive NOR2BX2 (7 insts)
+Primitive NOR2BX1 (91 insts)
+Primitive NAND4X2 (3 insts)
+Primitive NAND3XL (6 insts)
+Primitive NAND3X4 (15 insts)
+Primitive NAND3X2 (13 insts)
+Primitive NAND3X1 (45 insts)
+Primitive NAND3BXL (2 insts)
+Primitive NAND3BX2 (2 insts)
+Primitive NAND3BX1 (4 insts)
+Primitive NAND2X8 (3 insts)
+Primitive NAND2X6 (44 insts)
+Primitive NAND2X4 (13 insts)
+Primitive NAND2X2 (28 insts)
+Primitive NAND2X1 (225 insts)
+Primitive NAND2BX4 (2 insts)
+Primitive NAND2BX2 (2 insts)
+Primitive NAND2BX1 (60 insts)
+Primitive MXI2XL (19 insts)
+Primitive MXI2X6 (1 insts)
+Primitive MXI2X2 (17 insts)
+Primitive MXI2X1 (18 insts)
+Primitive MX2X1 (148 insts)
+Primitive INVXL (4 insts)
+Primitive INVX8 (2 insts)
+Primitive INVX3 (14 insts)
+Primitive INVX2 (24 insts)
+Primitive INVX1 (141 insts)
+Primitive DFFRX2 (8 insts)
+Primitive DFFRX1 (7 insts)
 Primitive DFFRHQX8 (1 insts)
-Primitive DFFRHQX4 (33 insts)
-Primitive DFFRHQX2 (29 insts)
-Primitive DFFRHQX1 (607 insts)
-Primitive CLKXOR2X2 (2 insts)
-Primitive CLKXOR2X1 (33 insts)
-Primitive CLKMX2X4 (4 insts)
-Primitive CLKMX2X3 (8 insts)
-Primitive CLKMX2X2 (20 insts)
-Primitive CLKINVX8 (6 insts)
-Primitive CLKINVX6 (17 insts)
-Primitive CLKINVX4 (12 insts)
+Primitive DFFRHQX4 (29 insts)
+Primitive DFFRHQX2 (4 insts)
+Primitive DFFRHQX1 (498 insts)
+Primitive CLKXOR2X1 (23 insts)
+Primitive CLKMX2X3 (6 insts)
+Primitive CLKMX2X2 (11 insts)
+Primitive CLKINVX8 (14 insts)
+Primitive CLKINVX6 (13 insts)
+Primitive CLKINVX4 (5 insts)
 Primitive CLKINVX20 (3 insts)
-Primitive CLKBUFX8 (34 insts)
-Primitive CLKBUFX6 (39 insts)
-Primitive CLKBUFX4 (252 insts)
-Primitive CLKBUFX3 (67 insts)
-Primitive CLKBUFX20 (7 insts)
-Primitive CLKBUFX2 (26 insts)
-Primitive CLKAND2X8 (2 insts)
-Primitive CLKAND2X6 (11 insts)
-Primitive CLKAND2X3 (10 insts)
-Primitive CLKAND2X2 (14 insts)
-Primitive CLKAND2X12 (2 insts)
-Primitive BUFX4 (10 insts)
-Primitive BUFX3 (30 insts)
-Primitive BUFX2 (353 insts)
-Primitive BUFX12 (7 insts)
-Primitive AOI32X2 (1 insts)
-Primitive AOI32X1 (1 insts)
+Primitive CLKBUFX8 (12 insts)
+Primitive CLKBUFX6 (42 insts)
+Primitive CLKBUFX4 (260 insts)
+Primitive CLKBUFX3 (123 insts)
+Primitive CLKBUFX2 (34 insts)
+Primitive CLKBUFX12 (1 insts)
+Primitive CLKAND2X8 (1 insts)
+Primitive CLKAND2X6 (10 insts)
+Primitive CLKAND2X4 (1 insts)
+Primitive CLKAND2X3 (6 insts)
+Primitive CLKAND2X2 (11 insts)
+Primitive CLKAND2X12 (1 insts)
+Primitive BUFX4 (29 insts)
+Primitive BUFX3 (38 insts)
+Primitive BUFX2 (378 insts)
+Primitive BUFX12 (6 insts)
+Primitive AOI32X4 (1 insts)
+Primitive AOI32X1 (2 insts)
 Primitive AOI31X2 (1 insts)
-Primitive AOI31X1 (1 insts)
-Primitive AOI2BB2X2 (4 insts)
+Primitive AOI31X1 (4 insts)
+Primitive AOI2BB2X2 (1 insts)
 Primitive AOI2BB2X1 (2 insts)
-Primitive AOI2BB1X4 (6 insts)
-Primitive AOI2BB1X2 (14 insts)
-Primitive AOI2BB1X1 (30 insts)
-Primitive AOI22XL (3 insts)
-Primitive AOI22X4 (9 insts)
-Primitive AOI22X2 (37 insts)
-Primitive AOI22X1 (263 insts)
-Primitive AOI222X2 (3 insts)
-Primitive AOI222X1 (63 insts)
-Primitive AOI221XL (3 insts)
-Primitive AOI221X4 (6 insts)
-Primitive AOI221X2 (37 insts)
-Primitive AOI221X1 (359 insts)
-Primitive AOI21XL (1 insts)
-Primitive AOI21X4 (2 insts)
-Primitive AOI21X2 (11 insts)
-Primitive AOI21X1 (62 insts)
-Primitive AOI211XL (2 insts)
-Primitive AOI211X4 (3 insts)
-Primitive AOI211X2 (9 insts)
-Primitive AOI211X1 (6 insts)
-Primitive AO22X4 (2 insts)
-Primitive AO22X2 (10 insts)
-Primitive AO22X1 (422 insts)
-Primitive AO21X4 (1 insts)
-Primitive AO21X1 (11 insts)
-Primitive AND3XL (37 insts)
-Primitive AND3X8 (1 insts)
+Primitive AOI2BB1X4 (2 insts)
+Primitive AOI2BB1X2 (5 insts)
+Primitive AOI2BB1X1 (21 insts)
+Primitive AOI22XL (1 insts)
+Primitive AOI22X4 (6 insts)
+Primitive AOI22X2 (42 insts)
+Primitive AOI22X1 (311 insts)
+Primitive AOI222X2 (1 insts)
+Primitive AOI222X1 (64 insts)
+Primitive AOI221XL (1 insts)
+Primitive AOI221X2 (6 insts)
+Primitive AOI221X1 (343 insts)
+Primitive AOI21X4 (3 insts)
+Primitive AOI21X2 (10 insts)
+Primitive AOI21X1 (56 insts)
+Primitive AOI211XL (3 insts)
+Primitive AOI211X2 (1 insts)
+Primitive AOI211X1 (2 insts)
+Primitive AO22X2 (2 insts)
+Primitive AO22X1 (398 insts)
+Primitive AO21X2 (1 insts)
+Primitive AO21X1 (36 insts)
+Primitive AND4X6 (16 insts)
+Primitive AND4X4 (5 insts)
+Primitive AND4X1 (40 insts)
+Primitive AND3XL (2 insts)
 Primitive AND3X6 (1 insts)
+Primitive AND3X1 (1 insts)
 Primitive AND2XL (3 insts)
-Primitive AND2X8 (15 insts)
-Primitive AND2X6 (66 insts)
-Primitive AND2X4 (8 insts)
-Primitive AND2X2 (5 insts)
-Primitive AND2X1 (85 insts)
+Primitive AND2X8 (18 insts)
+Primitive AND2X6 (48 insts)
+Primitive AND2X4 (6 insts)
+Primitive AND2X2 (3 insts)
+Primitive AND2X1 (53 insts)
 Primitive ADDHX1 (2 insts)
 ************
 *** Net length and connection length statistics (cell ariscv) ***
 
-Total net length = 1.160e+05 (5.590e+04 6.005e+04)
+Total net length = 1.096e+05 (5.319e+04 5.644e+04)
 
-Avg net length = 1.772e+01 (sigma = 2.737e+01)
-Sqrt of avg square net length = 3.260e+01
+Avg net length = 1.828e+01 (sigma = 2.635e+01)
+Sqrt of avg square net length = 3.207e+01
 
-Avg connection length = 5.830e+00 (sigma = 7.929e+00)
-Sqrt of avg square connection length = 9.842e+00
+Avg connection length = 5.926e+00 (sigma = 8.658e+00)
+Sqrt of avg square connection length = 1.049e+01
 
 Net and connection length distribution:
 
 [length   range   ]      #net #connection
-[0.00e+00 4.00e+00]:     1395     2994
-[4.00e+00 8.00e+00]:     1621     1846
-[8.00e+00 1.20e+01]:     1331      619
-[1.20e+01 1.60e+01]:      509      284
-[1.60e+01 2.00e+01]:      300      185
-[2.00e+01 2.40e+01]:      252      143
-[2.40e+01 2.80e+01]:      177       92
-[2.80e+01 3.20e+01]:      111       68
-[3.20e+01 3.60e+01]:       82       56
-[3.60e+01 4.00e+01]:       75       43
-[4.00e+01 4.40e+01]:       62       34
-[4.40e+01 4.80e+01]:       64       35
-[4.80e+01 5.20e+01]:       55       23
-[5.20e+01 5.60e+01]:       41       14
-[5.60e+01 6.00e+01]:       44       24
-[6.00e+01 6.40e+01]:       32       10
-[6.40e+01 6.80e+01]:       43       13
-[6.80e+01 7.20e+01]:       39       11
-[7.20e+01 7.60e+01]:       22       13
-[7.60e+01 8.00e+01]:       28        9
-[8.00e+01 8.40e+01]:       18        9
-[8.40e+01 8.80e+01]:       12        5
-[8.80e+01 9.20e+01]:       11        3
-[9.20e+01 9.60e+01]:       10        3
-[9.60e+01 1.00e+02]:        9        0
-[1.00e+02 1.04e+02]:        8        1
-[1.04e+02 1.08e+02]:        6        1
-[1.08e+02 1.12e+02]:       12        3
-[1.12e+02 1.16e+02]:        8        0
-[1.16e+02 1.20e+02]:        6        0
-[1.20e+02 1.24e+02]:       11        1
-[1.24e+02 1.28e+02]:       10        0
-[1.28e+02 1.32e+02]:        8        0
-[1.32e+02 1.36e+02]:        9        0
-[1.36e+02 1.40e+02]:       13        1
-[1.40e+02 1.44e+02]:        9        1
-[1.44e+02 1.48e+02]:       26        1
-[1.48e+02 1.52e+02]:       17        0
-[1.52e+02 1.56e+02]:       20        0
-[1.56e+02 1.60e+02]:       13        0
-[1.60e+02 1.64e+02]:        4        0
-[1.64e+02 1.68e+02]:        5        0
-[1.68e+02 1.72e+02]:        4        0
-[1.76e+02 1.80e+02]:        8        0
+[0.00e+00 4.00e+00]:     1135     2743
+[4.00e+00 8.00e+00]:     1429     1537
+[8.00e+00 1.20e+01]:     1295      628
+[1.20e+01 1.60e+01]:      471      274
+[1.60e+01 2.00e+01]:      307      180
+[2.00e+01 2.40e+01]:      244      117
+[2.40e+01 2.80e+01]:      154       81
+[2.80e+01 3.20e+01]:      116       68
+[3.20e+01 3.60e+01]:       99       79
+[3.60e+01 4.00e+01]:       77       55
+[4.00e+01 4.40e+01]:       73       49
+[4.40e+01 4.80e+01]:       47       32
+[4.80e+01 5.20e+01]:       40       25
+[5.20e+01 5.60e+01]:       47       19
+[5.60e+01 6.00e+01]:       45       21
+[6.00e+01 6.40e+01]:       33       16
+[6.40e+01 6.80e+01]:       37       11
+[6.80e+01 7.20e+01]:       23        7
+[7.20e+01 7.60e+01]:       23        5
+[7.60e+01 8.00e+01]:       20        5
+[8.00e+01 8.40e+01]:       16        5
+[8.40e+01 8.80e+01]:       23        7
+[8.80e+01 9.20e+01]:       14        4
+[9.20e+01 9.60e+01]:       22        7
+[9.60e+01 1.00e+02]:       13        4
+[1.00e+02 1.04e+02]:       18        3
+[1.04e+02 1.08e+02]:       22        4
+[1.08e+02 1.12e+02]:       13        1
+[1.12e+02 1.16e+02]:       22        3
+[1.16e+02 1.20e+02]:       13        2
+[1.20e+02 1.24e+02]:       16        0
+[1.24e+02 1.28e+02]:       13        2
+[1.28e+02 1.32e+02]:        9        1
+[1.32e+02 1.36e+02]:       11        0
+[1.36e+02 1.40e+02]:       17        1
+[1.40e+02 1.44e+02]:       11        0
+[1.44e+02 1.48e+02]:        6        1
+[1.48e+02 1.52e+02]:        5        0
+[1.56e+02 1.60e+02]:        2        0
+[1.60e+02 1.64e+02]:        3        0
+[1.64e+02 1.68e+02]:        1        0
+[1.68e+02 1.72e+02]:        2        0
+[1.72e+02 1.76e+02]:        1        0
+[1.76e+02 1.80e+02]:        1        0
+[1.84e+02 1.88e+02]:        1        0
 [1.88e+02 1.92e+02]:        1        0
-[1.92e+02 1.96e+02]:        3        0
-[2.76e+02 2.80e+02]:        1        0
+[1.96e+02 2.00e+02]:        2        0
+[2.00e+02 2.04e+02]:        1        0
+[2.24e+02 2.28e+02]:        1        0
+[2.36e+02 2.40e+02]:        1        0
+[2.40e+02 2.44e+02]:        1        0
 
 
 Total number of long connections = 0
 Io: nrCon=0
 
 
-Total length: 1.413e+05um, number of vias: 53221
-M1(H) length: 3.750e+03um, number of vias: 26856
-M2(V) length: 4.617e+04um, number of vias: 20595
-M3(H) length: 5.271e+04um, number of vias: 5252
-M4(V) length: 3.039e+04um, number of vias: 518
-M5(H) length: 8.244e+03um, number of vias: 0
-M6(V) length: 0.000e+00um, number of vias: 0
+Total length: 1.352e+05um, number of vias: 50874
+M1(H) length: 2.984e+03um, number of vias: 24615
+M2(V) length: 3.922e+04um, number of vias: 19694
+M3(H) length: 4.548e+04um, number of vias: 5799
+M4(V) length: 3.474e+04um, number of vias: 748
+M5(H) length: 1.234e+04um, number of vias: 18
+M6(V) length: 3.954e+02um, number of vias: 0
 M7(H) length: 0.000e+00um, number of vias: 0
 M8(V) length: 0.000e+00um, number of vias: 0
 M9(H) length: 0.000e+00um, number of vias: 0

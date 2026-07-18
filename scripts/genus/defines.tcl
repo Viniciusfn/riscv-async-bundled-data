@@ -2,7 +2,7 @@
 set DESIGN ariscv
 
 set SYNC_VERSION 0
-set PROTO_LC 1
+set PROTO_LC 0
 set LC_TOKENS 2
 
 set FAST_CORNER 0
