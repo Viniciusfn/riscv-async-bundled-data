@@ -2,7 +2,7 @@
 Starting benchmark on Async RISC-V...
 2K performance run parameters for coremark.
 CoreMark Size    : 666
-Total ticks      : 1037406892
+Total ticks      : 1014353405
 Total time (secs): 10
 Iterations/Sec   : 160
 Iterations       : 1600
