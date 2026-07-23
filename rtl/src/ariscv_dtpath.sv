@@ -75,6 +75,7 @@ module ariscv_dtpath #(
 
    /* HAZARD HANDLING - begin */
    logic                      lw_stall;
+   logic                      alu_stall;
    logic                      stall_pc;
    logic                      stall_fd;
    logic                      flush_fd;
@@ -139,7 +140,7 @@ module ariscv_dtpath #(
                                  | ((rs2_fd == wr_addr_reg_em) & (~aluSrc_fd | memWrite_fd))))
                               )
                               ?1'b1 :1'b0;
-         assign stall_pc   = lw_stall | alu_stall;
+         assign stall_pc   = lw_stall | alu_stall & (~pc_src);
          assign stall_fd   = lw_stall | alu_stall;
          assign flush_fd   = pc_src;
          assign flush_de   = lw_stall | alu_stall | pc_src;
