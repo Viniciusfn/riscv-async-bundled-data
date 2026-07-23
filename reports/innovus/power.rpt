@@ -2,7 +2,7 @@
 *	Innovus 22.14-s061_1 (64bit) 10/18/2023 11:21 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2026-Jul-23 00:17:31 (2026-Jul-23 03:17:31 GMT)
+* 	Date & Time:	2026-Jul-23 19:54:03 (2026-Jul-23 22:54:03 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -43,33 +43,33 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        1.67596779 	   71.7656%
-Total Switching Power:       0.65888245 	   28.2136%
-Total Leakage Power:         0.00048653 	    0.0208%
-Total Power:                 2.33533677 
+Total Internal Power:        1.69152563 	   71.8104%
+Total Switching Power:       0.66350177 	   28.1677%
+Total Leakage Power:         0.00051657 	    0.0219%
+Total Power:                 2.35554397 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                         1.283     0.08263   0.0002521       1.366       58.48 
+Sequential                         1.281     0.08681   0.0002508       1.368       58.06 
 Macro                                  0           0           0           0           0 
 IO                                     0           0           0           0           0 
-Combinational                     0.1724       0.303   0.0002049      0.4757       20.37 
-Clock (Combinational)             0.2207      0.2732   2.945e-05       0.494       21.15 
+Combinational                     0.1976       0.307   0.0002372      0.5048       21.43 
+Clock (Combinational)             0.2134      0.2697   2.853e-05      0.4831       20.51 
 Clock (Sequential)                     0           0           0           0           0 
 -----------------------------------------------------------------------------------------
-Total                              1.676      0.6589   0.0004865       2.335         100 
+Total                              1.692      0.6635   0.0005166       2.356         100 
 -----------------------------------------------------------------------------------------
 
 
 Clock                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-clk                               0.2207      0.2732   2.945e-05       0.494       21.15 
+clk                               0.2134      0.2697   2.853e-05      0.4831       20.51 
 -----------------------------------------------------------------------------------------
-Total (excluding duplicates)      0.2207      0.2732   2.945e-05       0.494       21.15 
+Total (excluding duplicates)      0.2134      0.2697   2.853e-05      0.4831       20.51 
 -----------------------------------------------------------------------------------------
 Clock: clk
 Clock Period: 0.004400 usec 
@@ -81,42 +81,42 @@ Clock Static Probability:  0.5000
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-VDD                       0.9      1.676      0.6589   0.0004865       2.335         100 
+VDD                       0.9      1.692      0.6635   0.0005166       2.356         100 
 
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        1.67596779 	   71.7656%
-Total Switching Power:       0.65888245 	   28.2136%
-Total Leakage Power:         0.00048653 	    0.0208%
-Total Power:                 2.33533677 
+Total Internal Power:        1.69152563 	   71.8104%
+Total Switching Power:       0.66350177 	   28.1677%
+Total Leakage Power:         0.00051657 	    0.0219%
+Total Power:                 2.35554397 
 -----------------------------------------------------------------------------------------
 
 
 Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-uu_dtpath                          1.673      0.6561   0.0004831        2.33       99.75  
-uu_dtpath/uu_dec                    1.18      0.3787   0.0003271       1.559       66.75  
-uu_dtpath/uu_exec                 0.2145      0.1365   9.539e-05      0.3511       15.03  
-uu_dtpath/uu_fetch                0.1054     0.01546   2.186e-05      0.1208       5.174  
-uu_dtpath/uu_mem                 0.09748    0.007434   1.816e-05      0.1049       4.493  
-uu_dtpath/uu_wb                 0.006587     0.01487   6.818e-06     0.02147      0.9192  
+uu_dtpath                           1.69      0.6628   0.0005151       2.353        99.9  
+uu_dtpath/uu_dec                   1.184      0.3482   0.0003431       1.533       65.07  
+uu_dtpath/uu_exec                 0.2258       0.155    0.000106       0.381       16.17  
+uu_dtpath/uu_fetch                0.1069     0.01423   2.436e-05      0.1211       5.142  
+uu_dtpath/uu_mem                  0.0985    0.008919   1.846e-05      0.1074       4.561  
+uu_dtpath/uu_wb                  0.01007     0.03751   9.508e-06     0.04759        2.02  
 uu_dtpath/uu_dec/uu_reg_file
-                                    1.04      0.3359   0.0002948       1.376       58.91  
+                                   1.032        0.29   0.0002991       1.322       56.13  
 uu_dtpath/uu_dec/uu_ctrl_unit
-                               0.0007921   0.0009202    1.42e-06    0.001714     0.07338  
+                               0.0007703    0.000752   1.437e-06    0.001524     0.06469  
 uu_dtpath/uu_dec/uu_extend
-                                0.001951    0.002391   2.327e-06    0.004345      0.1861  
-uu_dtpath/uu_exec/uu_alu         0.09061      0.0946   6.194e-05      0.1853       7.934  
+                                0.001971    0.002944   2.389e-06    0.004918      0.2088  
+uu_dtpath/uu_exec/uu_alu          0.1016      0.1122   7.126e-05      0.2139       9.079  
 
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*                Highest Average Power: uu_dtpath/CTS_ccl_a_buf_00032 (CLKBUFX4):         0.002367 
-*                Highest Leakage Power:       FE_PDC588_i_inst_27 (CLKBUFX20):        6.189e-07 
-*          Total Cap:      2.32079e-11 F
-*          Total instances in design:  5557
+*                Highest Average Power: uu_dtpath/CTS_ccl_a_buf_00034 (CLKBUFX4):         0.002315 
+*                Highest Leakage Power: uu_dtpath/uu_exec/uu_alu/FE_OFC355_alu_srcB_w_0 (CLKBUFX20):        6.198e-07 
+*          Total Cap:      2.35101e-11 F
+*          Total instances in design:  6059
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap:     0

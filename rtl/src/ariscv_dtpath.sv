@@ -125,10 +125,9 @@ module ariscv_dtpath #(
       `else
          `ifdef SYNTHESIS
          assign lw_stall = 1'b0;
+         assign alu_stall= 1'b0;
          assign stall_pc = 1'b0;
          assign stall_fd = 1'b0;
-         assign flush_fd = 1'b0;
-         assign flush_de = 1'b0;
          `else // For simulation only (to add bubles in dependencies)
          assign lw_stall   = ((resultSrc_de[0]) & ((rs1_fd == wr_addr_reg_de) | (rs2_fd == wr_addr_reg_de))) ?1'b1 :1'b0;
          assign memWrite_fd = (inst_fd[6:0] == 7'b0100011) ? 1'b1 : 1'b0; // if op is SW
@@ -142,9 +141,9 @@ module ariscv_dtpath #(
                               ?1'b1 :1'b0;
          assign stall_pc   = lw_stall | alu_stall & (~pc_src);
          assign stall_fd   = lw_stall | alu_stall;
-         assign flush_fd   = pc_src;
-         assign flush_de   = lw_stall | alu_stall | pc_src;
          `endif
+      assign flush_fd   = pc_src;
+      assign flush_de   = lw_stall | alu_stall | pc_src;
       assign forwardA_E = 2'b00;
       assign forwardB_E = 2'b00;
       `endif
