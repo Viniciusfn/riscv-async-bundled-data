@@ -9,7 +9,7 @@ GroupType:*
    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
    | WNS:TNS:#VIO                   | WNS:TNS:#VIO                   | WNS:TNS:#VIO                   | WNS:TNS:#VIO                   | WNS:TNS:#VIO                   | FromClk->ToClk                 | 
    |--------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------------------| 
-    -0.026:-0.121:13                 0.000:0.000:0                    0.000:0.000:0                    -0.026:-0.121:13                 0.000:0.000:0                    *->CAPTURE_REG_DE
+    -0.021:-0.021:1                  0.000:0.000:0                    0.000:0.000:0                    -0.021:-0.021:1                  0.000:0.000:0                    *->clk
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INFO: Out of 13 endpoints finally reported to be violating, 0 number of endpoints reported Graph Based Analysis (GBA) bounded slack. Refer to message TCLCMD-1251 and TCLCMD-1377 in log file for details regarding the reason for GBA bounding.
+INFO: Out of 1 endpoints finally reported to be violating, 0 number of endpoints reported Graph Based Analysis (GBA) bounded slack. Refer to message TCLCMD-1251 and TCLCMD-1377 in log file for details regarding the reason for GBA bounding.

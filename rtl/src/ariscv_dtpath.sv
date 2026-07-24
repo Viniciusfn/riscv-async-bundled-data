@@ -75,6 +75,7 @@ module ariscv_dtpath #(
 
    /* HAZARD HANDLING - begin */
    logic                      lw_stall;
+   logic                      alu_stall;
    logic                      stall_pc;
    logic                      stall_fd;
    logic                      flush_fd;
@@ -92,39 +93,66 @@ module ariscv_dtpath #(
    assign rs2_fd = inst_fd[24:20];
 
    `ifdef SYNC_RISCV
-   assign lw_stall   = ((resultSrc_de[0]) & ((rs1_fd == wr_addr_reg_de) | (rs2_fd == wr_addr_reg_de))) ?1'b1 :1'b0;
-   assign stall_pc   = lw_stall;
-   assign stall_fd   = lw_stall;
-   assign flush_fd   = pc_src;
-   assign flush_de   = lw_stall | pc_src;
-   
-   always_comb begin : forwarding
-      if (((rs1_de == wr_addr_reg_em) & regWrite_em) & (rs1_de != 0)) begin
-         forwardA_E = 2'b10;
-      end
-      else if (((rs1_de == wr_addr_reg_wd) & wr_en_reg) & (rs1_de != 0)) begin
-         forwardA_E = 2'b01;
-      end
-      else begin
-         forwardA_E = 2'b00;
-      end
+      `ifdef HAZARD_UNIT
+      assign lw_stall   = ((resultSrc_de[0]) & ((rs1_fd == wr_addr_reg_de) | (rs2_fd == wr_addr_reg_de))) ?1'b1 :1'b0;
+      assign stall_pc   = lw_stall;
+      assign stall_fd   = lw_stall;
+      assign flush_fd   = pc_src;
+      assign flush_de   = lw_stall | pc_src;
+      
+      always_comb begin : forwarding
+         if (((rs1_de == wr_addr_reg_em) & regWrite_em) & (rs1_de != 0)) begin
+            forwardA_E = 2'b10;
+         end
+         else if (((rs1_de == wr_addr_reg_wd) & wr_en_reg) & (rs1_de != 0)) begin
+            forwardA_E = 2'b01;
+         end
+         else begin
+            forwardA_E = 2'b00;
+         end
 
-      if (((rs2_de == wr_addr_reg_em) & regWrite_em) & (rs2_de != 0)) begin
-         forwardB_E = 2'b10;
+         if (((rs2_de == wr_addr_reg_em) & regWrite_em) & (rs2_de != 0)) begin
+            forwardB_E = 2'b10;
+         end
+         else if (((rs2_de == wr_addr_reg_wd) & wr_en_reg) & (rs2_de != 0)) begin
+            forwardB_E = 2'b01;
+         end
+         else begin
+            forwardB_E = 2'b00;
+         end
       end
-      else if (((rs2_de == wr_addr_reg_wd) & wr_en_reg) & (rs2_de != 0)) begin
-         forwardB_E = 2'b01;
-      end
-      else begin
-         forwardB_E = 2'b00;
-      end
-   end
+      
+      `else
+         `ifdef SYNTHESIS
+         assign lw_stall = 1'b0;
+         assign alu_stall= 1'b0;
+         assign stall_pc = 1'b0;
+         assign stall_fd = 1'b0;
+         `else // For simulation only (to add bubles in dependencies)
+         assign lw_stall   = ((resultSrc_de[0]) & ((rs1_fd == wr_addr_reg_de) | (rs2_fd == wr_addr_reg_de))) ?1'b1 :1'b0;
+         assign memWrite_fd = (inst_fd[6:0] == 7'b0100011) ? 1'b1 : 1'b0; // if op is SW
+         assign alu_stall  = (  ((regWrite_de) & (wr_addr_reg_de != 0)
+                                 & ((rs1_fd == wr_addr_reg_de)
+                                 | ((rs2_fd == wr_addr_reg_de) & (~aluSrc_fd | memWrite_fd))))
+                              | ((regWrite_em) & (wr_addr_reg_em != 0)
+                                 & ((rs1_fd == wr_addr_reg_em)
+                                 | ((rs2_fd == wr_addr_reg_em) & (~aluSrc_fd | memWrite_fd))))
+                              )
+                              ?1'b1 :1'b0;
+         assign stall_pc   = lw_stall | alu_stall & (~pc_src);
+         assign stall_fd   = lw_stall | alu_stall;
+         `endif
+      assign flush_fd   = pc_src;
+      assign flush_de   = lw_stall | alu_stall | pc_src;
+      assign forwardA_E = 2'b00;
+      assign forwardB_E = 2'b00;
+      `endif
    
    assign pc_fd_de_mux = inst_fd;
    assign pc_plus4_fd_de_mux = pc_fd;
    assign inst_fd_de_mux = pc_plus4_fd;
-
-   `else
+   
+   `else // ASYNC RiscV Version
    assign stall_fd   = 1'b0;
    assign flush_fd   = 1'b0;
    assign forwardA_E = 2'b00;

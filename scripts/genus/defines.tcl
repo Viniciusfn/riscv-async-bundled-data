@@ -1,9 +1,18 @@
 ## Set the DESIGN 
 set DESIGN ariscv
 
-set SYNC_VERSION 0
-set PROTO_LC 0
-set LC_TOKENS 2
+# Selects Async(0) or Sync(1) Version
+set SYNC_VERSION 1
+
+# For Async Version only
+set PROTO_LC 0 ; # 0 - WCHB protocol; 1 - LC protocol
+
+# For LC protocol only
+set LC_TOKENS 2 ; # supported: 1, 2
+
+# For Sync Version only
+set HAZARD_UNIT 0 ; # 0 - no HU; 1 - with HU
+
 
 set FAST_CORNER 0
 

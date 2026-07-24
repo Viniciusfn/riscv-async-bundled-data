@@ -1,6 +1,6 @@
 `timescale 1ns / 100ps
 `define PERF_CLK_PERIOD 10
-//`define BENCHMARK_TEST
+// `define PERF_CLK_PERIOD 4.4  // Sync Version clock
 
 import ariscv_params_pkg::*;
 
@@ -393,11 +393,17 @@ module tb_ariscv_soc_top;
       `ifdef TOKENS_2
       @(negedge reg_clk);
       `endif
+      `ifdef SYNC_RISCV; `ifndef HAZARD_UNIT
+      @(negedge reg_clk); @(negedge reg_clk);
+      `endif; `endif
       assert(tb_reg_dt[1] == 32'hFFFFFB0D);
       @(negedge reg_clk);
       `ifdef TOKENS_2
       @(negedge reg_clk);
       `endif
+      `ifdef SYNC_RISCV; `ifndef HAZARD_UNIT
+      @(negedge reg_clk); @(negedge reg_clk);
+      `endif; `endif
       assert(tb_reg_dt[2] == 32'hFFFFF618);
 
       @(negedge reg_clk);
@@ -405,10 +411,16 @@ module tb_ariscv_soc_top;
       `ifdef TOKENS_2
       @(negedge reg_clk);
       `endif
+      `ifdef SYNC_RISCV; `ifndef HAZARD_UNIT
+      @(negedge reg_clk); @(negedge reg_clk);
+      `endif; `endif
       assert(tb_reg_dt[4] == tb_reg_dt[2]);
       @(negedge reg_clk);
       `ifdef SYNC_RISCV
       @(negedge reg_clk);
+         `ifndef HAZARD_UNIT
+         @(negedge reg_clk);
+         `endif
       `endif
       `ifdef TOKENS_2
       @(negedge reg_clk);
@@ -418,6 +430,9 @@ module tb_ariscv_soc_top;
       `ifdef TOKENS_2
       @(negedge reg_clk);
       `endif
+      `ifdef SYNC_RISCV; `ifndef HAZARD_UNIT
+      @(negedge reg_clk); @(negedge reg_clk);
+      `endif; `endif
       assert(tb_reg_dt[2] == tb_reg_dt[1] + tb_reg_dt[4]);
 
       // Control Hazards
@@ -429,6 +444,12 @@ module tb_ariscv_soc_top;
          @(negedge reg_clk);
          assert(tb_reg_dt[1] != '1);
       end
+         `ifndef HAZARD_UNIT
+         repeat (7) begin
+            @(negedge reg_clk);
+            assert(tb_reg_dt[1] != '1);
+         end
+         `endif
       `endif
       `ifdef TOKENS_2
       repeat (3) begin

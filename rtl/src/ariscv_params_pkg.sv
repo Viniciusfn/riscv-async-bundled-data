@@ -71,7 +71,7 @@ package ariscv_params_pkg;
          DELAY_DE_PC    : 44,
          DELAY_EM_MW    : 10,
          DELAY_MW_REG   : 16,
-         DELAY_REG_DE   : 19,
+         DELAY_REG_DE   : 20,
          DELAY_LOOP     : 14,
          DELAY_LOOP_2   : 42,
          `endif

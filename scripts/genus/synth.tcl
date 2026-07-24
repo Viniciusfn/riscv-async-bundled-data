@@ -42,6 +42,9 @@ if {$FAST_CORNER == 1} {
 
 if {$SYNC_VERSION == 1} {
     lappend HDL_FLAGS -define SYNC_RISCV
+    if {$HAZARD_UNIT == 1} {
+        lappend HDL_FLAGS -define HAZARD_UNIT
+    }
 }
 
 if {$PROTO_LC == 1} {
