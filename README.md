@@ -1,2 +1,2 @@
-# riscv-async-tcc
-Processador RISC-V com Arquitetura de Pipeline Assíncrona de Dados Agrupados
+# Risc-V based on Asynchronous Bundled-Data Pipeline
+Risc-V processor developed based on Asyncrhonous Bundled-Data Pipeline (or Micropipeline).
